@@ -1,0 +1,31 @@
+{{ partial "header.html" . }}
+
+{{ partial "page-title.html" . }}
+
+{{ if .Site.Data.demo.enable }}
+{{ "<!-- Service Section Start -->" | safeHTML }}
+<section id="demo-page" class="pages demo-page" style='background-image: url("{{ .Site.Params.intro.bgImage | absURL }}");'>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 order-2 order-lg-1">
+                <div class="block">
+                    <div class="row demo-parts">
+                        {{ range .Site.Data.demo.demoItem }}
+                        <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
+                            {{ with .title }}<h3>{{ . }}</h3>{{ end }}
+                            {{ with .content }}<p>{{ . | safeHTML }}</p>{{ end }}
+                            {{ with .link }}<a href="{{ . }}" class="btn">應用範例</a>{{ end }}
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ "<!-- Service Section End -->" | safeHTML }}
+{{ end }}
+
+{{ partial "cta.html" . }}
+
+{{ partial "footer.html" . }}

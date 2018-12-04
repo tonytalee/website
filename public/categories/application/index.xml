@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>application on Data Analysis for Problem Solving</title>
+    <link>/categories/application/</link>
+    <description>Recent content in application on Data Analysis for Problem Solving</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    
+	<atom:link href="/categories/application/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>數據分析架構</title>
+      <link>/intro/analysis_frame-/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/intro/analysis_frame-/</guid>
+      <description> 數據分析應用於一般營運管理 如何做&amp;hellip; </description>
+    </item>
+    
+    <item>
+      <title>數據分析與持續改善</title>
+      <link>/intro/analysis_frame-/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/intro/analysis_frame-/</guid>
+      <description> 數據分析應用於持續改善活動 如何做&amp;hellip; </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,75 @@
+baseurl = "http://sightingdata.com/"
+languageCode = "en-us"
+title = "數據分析與持續改善"
+copyright = "&copy; 2018"
+
+enableEmoji = true
+footnotereturnlinkcontents = "<sup>^</sup>"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+preserveTaxonomyNames = true
+paginate = 10
+
+# Site Menus
+[menu]
+    # Navbar Menus
+    [[menu.nav]]
+        name    = "服務"
+        url     = "/service"
+        weight  = 4
+    [[menu.nav]]
+        name    = "Blog"
+        url     = "/blog"
+        weight  = 6
+    [[menu.nav]]
+        name    = "應用範例"
+        url     = "/demo"
+        weight  = 8
+
+# Site Params
+[params]
+    home = "首頁"
+    dateFormat = "6 January 2006"
+    logo = "images/logo-2.png"
+    logo_alt = "logo"
+    #logo_text = "logo_text"
+
+    # Navigation
+    [params.navigation]
+        aboutme = "關於・我"
+        cta = "聯絡我"
+
+    # Banner Section
+    [params.banner]
+        enable  = true
+        bgImage = "images/home-bg.jpg"
+        heading = "數據分析與持續改善"
+        subtitle = "運用數據分析及持續改善的架構"
+        description = "提升企業的生產力、降低成本、改善品質"
+        btn     = true
+        
+    # Section why and how are built in /partials/why.html
+
+     # Intro Section On Homepage
+    [params.intro]
+        enable  = true
+        bgImage = "images/white1.jpg"
+        title   = "數據分析架構介紹"
+        subtitle= "數據分析應用至..."
+
+    # Homepage About Section
+    [params.aboutme]
+        enable  = true
+        title   = "關於・我"
+        content = "我幫助企業運用數據分析解決問題。<br><br>對於要提升企業生產力、降低成本、改善品質的經理人或工程師，我整合數據分析和問題解決方法的服務可以幫助你們快速、有效的完成工作。<br><br>不同於購入 BI 工具，我提供的服務以解決問題為核心，客製化解決問題所需要的數據分析架構- 包含儀表板、分析介面、分析報告、及隠含的統計分析模型，讓使用者可以專心在問題解決上。使用 BI 工具，使用者需要高度的訓練，及數據整理、分析的技能，而且也需要分析的統計知識，這些都不是單純的購入 BI 工具就可以具備的。<br><br>此外， BI 工具也無法提供像 Six-sigma 或 8D 的解決問題方法，使用者本身必須具備問題解決方法的技能，並具要能將 BI 工具應用到解決問題的情境中。而我過去的實務經驗，專長就在問題解決，而且是充分運用數據分析解決問題。加上，我們使用的分析工具及介面的免費的 R 語言。我提供的數據分析服務是能以較低的成本，更有效的達到客戶的需求。"
+        image   = "images/about/about.jpg"
+
+    # Call to Action
+    [params.cta]
+        enable  = true
+        title   = "<div>為您的企業建更強大的<span style='color:#FF8C00'>數據分析</span>與<span style='color:#FF8C00'>持續改善</span>能力</div>"
+        content = "聯絡我！"
+        mail = "tonylee@sightingdata.com"
+        phone = "0972-268-529"
+
+   
+    

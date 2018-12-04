@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intros on 數據分析與持續改善</title>
+    <link>/intro/</link>
+    <description>Recent content in Intros on 數據分析與持續改善</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Thu, 12 Jul 2018 16:54:54 +0600</lastBuildDate>
+    
+	<atom:link href="/intro/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>數據分析架構</title>
+      <link>/intro/analysis_frame-/</link>
+      <pubDate>Thu, 12 Jul 2018 16:54:54 +0600</pubDate>
+      
+      <guid>/intro/analysis_frame-/</guid>
+      <description>數據分析架構 如何做 下一步 這是</description>
+    </item>
+    
+    <item>
+      <title>數據分析與問題解決</title>
+      <link>/intro/analysis_improvment/</link>
+      <pubDate>Thu, 12 Jul 2018 16:53:54 +0600</pubDate>
+      
+      <guid>/intro/analysis_improvment/</guid>
+      <description>數據分析應用於持續改善活動 如何做 那這</description>
+    </item>
+    
+  </channel>
+</rss>

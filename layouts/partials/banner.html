@@ -1,0 +1,26 @@
+{{ if .Site.Params.banner.enable }}
+{{ "<!-- Slider Section Start -->" | safeHTML }}
+<section id="hero-area" style='background-image: url("{{ .Site.Params.banner.bgImage | absURL }}");'>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="block wow fadeInUp" data-wow-delay=".3s">
+                    {{ "<!-- Slider -->" | safeHTML}}
+                    <section class="cd-intro">
+                        <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s">
+                            {{ with .Site.Params.banner.heading }}<span>{{ . }}</span>{{ end }}
+                        </h1>
+                    </section>
+                    {{ with .Site.Params.banner.subtitle }}<h2 class="wow fadeInUp animated" data-wow-delay=".6s">{{ . }}</h2>{{ end }}
+                    {{ with .Site.Params.banner.description }}<h2 class="wow fadeInUp animated" data-wow-delay=".6s">{{ . }}</h2>{{ end }}
+                    {{ if .Site.Params.banner.btn }}                    
+                        <a href="{{ .Site.BaseURL }}#why"><i class="ion-android-arrow-dropdown-circle" style= "font-size: 50px"></i></a>
+                    {{ end }}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ "<!-- Slider Section End -->" | safeHTML }}
+{{ end }}

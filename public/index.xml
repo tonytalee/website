@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>數據分析與持續改善</title>
+    <link>/</link>
+    <description>Recent content on 數據分析與持續改善</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Tue, 20 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Test page</title>
+      <link>/blog/test-page/</link>
+      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/test-page/</guid>
+      <description> Test page 測試頁面 </description>
+    </item>
+    
+    <item>
+      <title>數據分析架構</title>
+      <link>/intro/analysis_frame-/</link>
+      <pubDate>Thu, 12 Jul 2018 16:54:54 +0600</pubDate>
+      
+      <guid>/intro/analysis_frame-/</guid>
+      <description>數據分析架構 如何做 下一步 這是</description>
+    </item>
+    
+    <item>
+      <title>數據分析與問題解決</title>
+      <link>/intro/analysis_improvment/</link>
+      <pubDate>Thu, 12 Jul 2018 16:53:54 +0600</pubDate>
+      
+      <guid>/intro/analysis_improvment/</guid>
+      <description>數據分析應用於持續改善活動 如何做 那這</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/blog/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/blog/2015-07-23-r-rmarkdown/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+enable  : true
+title   : 應用範例
+subtitle: 運用資料分析到問題解決及持續改善的實務
+demoItem :
+  - title : SPC 分析
+    content: >
+      <h4>SPC 可以做得比一張管制圖還管制還多，讓使用者更輕鬆容易的分析異常的管制項目。</h4><br>
+      除了藉由管制圖呈現製程的穏定性之外，我們可以整合相關的製程資訊到 SPC  分析介面中，讓使用者可以快速的檢視管制項目的製程能力、對相關因子做變異分析、比較製程能力的變化，讓使用者面對異常狀況時，可以迅速的採取更正確的行動。
+    link:  http://www.sightingdata.com/shiny/SPC_demo
+
+  - title : 產品良率分析
+    content: >
+      <h4>及時的良率監控或短期的良率檢視：</h4><br>
+      重點在找出良率異常（過低或過高）的批次，分析原因，防堵異常良率持續發生。良率異常的批次是否在製程管制中就己掌握，問題是否己解決，原因是否掌控，良率異常產品會持續多久或多少個批次，找出潛在(尚未發現)的低良率批次。
+    link: http://www.sightingdata.com/shiny/Yield_demo
+        
+
+  - title : 研發
+    content: >
+      Veritatis eligendi, dignissimos. Porta fermentum mus aute pulvinar earum minus platea massa feugiat rutrum urna facilisi ipsameum
