@@ -1,4 +1,4 @@
-baseurl = "http://sightingdata.com/"
+baseurl = "/"
 languageCode = "en-us"
 title = "數據分析與持續改善"
 copyright = "&copy; 2018"
