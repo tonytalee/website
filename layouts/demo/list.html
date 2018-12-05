@@ -12,9 +12,11 @@
                     <div class="row demo-parts">
                         {{ range .Site.Data.demo.demoItem }}
                         <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
-                            {{ with .title }}<h3>{{ . }}</h3>{{ end }}
+                            <h2>
+                            {{ with .title }}<span>{{ . }}</span>{{ end }}
+                            {{ with .link }}<span><a href="{{ . }}" class="btn">應用範例</a></span>{{ end }}
+                            </h2>
                             {{ with .content }}<p>{{ . | safeHTML }}</p>{{ end }}
-                            {{ with .link }}<a href="{{ . }}" class="btn">應用範例</a>{{ end }}
                         </div>
                         {{ end }}
                     </div>

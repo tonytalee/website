@@ -3,15 +3,22 @@
 <section id="aboutme">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="block col-md-12 text-center">
+                <div class="block wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
+                    {{ with .Site.Params.aboutme.image }}<img src="{{ . | absURL }}" width= "150px" alt="aboutme-image">{{ end }}
+                </div>
+                {{ with .Site.Params.aboutme.title }}<h4>{{ . }}</h4>{{ end }}
+            </div>
+        </div>
+        <div class="row">
+             <div class="col-sm-6">
                 <div class="block wow fadeInLeft" data-wow-delay=".3s" data-wow-duration="500ms">
-                    {{ with .Site.Params.aboutme.title }}<h2>{{ . }}</h2>{{ end }}
-                    {{ with .Site.Params.aboutme.content }}<p>{{ . | safeHTML }}</p>{{ end }}
+                    {{ with .Site.Params.aboutme.content_l }}<p>{{ . | safeHTML }}</p>{{ end }}
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="block wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
-                    {{ with .Site.Params.aboutme.image }}<img src="{{ . | absURL }}" alt="aboutme-image">{{ end }}
+                <div class="block wow fadeInLeft" data-wow-delay=".3s" data-wow-duration="500ms">
+                    {{ with .Site.Params.aboutme.content_r }}<p>{{ . | safeHTML }}</p>{{ end }}
                 </div>
             </div>
         </div>
