@@ -7,10 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Mon, 03 Dec 2018 16:54:54 +0600</lastBuildDate>
+    <lastBuildDate>Thu, 06 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>統計基礎工具說明</title>
+      <link>/intro/instruction_analysistools/</link>
+      <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/intro/instruction_analysistools/</guid>
+      <description>一、簡介： 統計基礎工具的應用介面包含三個功能：
+ Review and Clean Data：檢查數據中是否有重複的資料列，是否有遺失值及極端值。以及對數據做總結及檢視數據分佈。 Comparing Mean：比較平均值，包括 one-sample, two-sample 及 paired-sample。 Comparing Proportion：比較比例，包括 one-proportion, two-proportion 及 paired-proportion。  二、使用內建數據 應用程式中含有內建的數據，使用者可以使用內建的數據測試及了解介面功能。使用內建數據，勾選左側側邊欄的 &amp;lsquo;Use demo data&amp;rsquo; 即可。如果要使用自己的數據，記得不要勾選這個選項。
+三、使用 Review and Clean Data 使用者可以利用這個介面功能檢查數據中：是否有重複的資料列、是否有遺失值及極端值，以及對數據做總結及檢視數據分佈。
+四、使用 Comparing Mean 這個介面在比較平均值是否有差異，包括 one-sample, two-sample 及 paired-sample。
+輸入數據 數據內容先用試算(例如 excel 或 google sheet) 輸入數據再儲存成 csv 格式。再利用側邊欄的 &amp;lsquo;Select a CSV file&amp;rsquo; 選擇要分析的 csv 檔。
+數據格式： csv 檔的第一列為欄位名稱，數據從第二列開始。
+ 單一樣本群組 (one-sample)：將數據儲存在第一欄。 兩組樣本群組 (two-sample 及 paired-sample)：包含三個欄位。第一個欄位為每個樣本的 id，每一列為一個樣本, id 不可重複，若無特定 id, 編上流水號也可以。第二欄為樣本的值。第三欄為樣本的群組別，因為是 two-sample，所以應只有兩個群組別。欄位順序可以互換，在介面中，會選擇 id, 樣本值跟群組別相對應的欄位。  使用介面 選擇檔案後，選擇資料對應的欄位。再選擇要設定的 null hypothesis，之後按照比較平均值的檢定需求(通常是考量型一及型二風險)設定檢定的顯著水準(significance level, 通常被簡稱為 alpha)。所有參數設定完成之後，按 &amp;lsquo;SUBMIT&amp;rsquo; 執行檢定運算。</description>
+    </item>
     
     <item>
       <title>數據分析架構</title>

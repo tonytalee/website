@@ -13,24 +13,24 @@
     </div>
 </section>
 
-{{ "<!-- work details part start -->" | safeHTML }}
-<section class="work-single">
+{{ "<!-- intro details part start -->" | safeHTML }}
+<section class="intro-single">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 {{ with .Params.image }}
-                <div class="work-single-image">
-                    <!-- Work Single Image -->
-                    <img class="img-fluid w-100" src="{{ . | absURL }}" alt="work-single-image">
+                <div class="intro-single-image">
+                    <!-- intro Single Image -->
+                    <img class="img-fluid w-100" src="{{ . | absURL }}" alt="intro-single-image">
                 </div>
                 {{ end }}
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <!-- work single Content -->
+                <!-- intro single Content -->
                 {{ with .Content }}
-                <div class="work-single-content">
+                <div class="intro-single-content">
                     {{ . }}
                 </div>
                 {{ end }}
@@ -38,7 +38,7 @@
         </div>
     </div>
 </section>
-{{"<!-- work details part end -->" | safeHTML }}
+{{"<!-- intro details part end -->" | safeHTML }}
 
 {{ partial "cta.html" . }}
 

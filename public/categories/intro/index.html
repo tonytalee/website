@@ -59,11 +59,7 @@
                             </li>
                             
                             <li class="nav-item  pad_top">
-                                <a class="nav-link" href="/service">服務</a>
-                            </li>
-                            
-                            <li class="nav-item  pad_top">
-                                <a class="nav-link" href="/blog">Blog</a>
+                                <a class="nav-link" href="/intro/analysis_frame1">架構介紹</a>
                             </li>
                             
                             <li class="nav-item  pad_top">
@@ -97,15 +93,6 @@
             <div class="col-md-12">
                 <div class="block">
                     <h2>intro</h2>
-                    <ol class="breadcrumb list-inline text-center">
-                        <li class="list-inline-item">
-                            <a href="/">
-                                <i class="ion-ios-home"></i>
-                                Home &nbsp; &nbsp;/
-                            </a>
-                        </li>
-                        <li class="active list-inline-item">intro</li>
-                    </ol>
                 </div>
             </div>
         </div>
@@ -121,30 +108,33 @@
                 <article class="wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">
                     
                     <div class="blog-post-image">
-                        <a href="/intro/intro_frame_data_analysis/">
+                        <a href="/intro/2018-12-06-instruction_analysistools/">
                              
                         </a>
                     </div>
                     <div class="blog-content">
                         <h2 class="blogpost-title">
-                            <a href="/intro/intro_frame_data_analysis/">數據分析架構介紹</a>
+                            <a href="/intro/2018-12-06-instruction_analysistools/">統計基礎工具說明</a>
                         </h2>
                         <div class="blog-meta">
-                            <span>Monday, Dec 3, 2018</span>
+                            <span>Thursday, Dec 6, 2018</span>
                             <span>by
                                 Tony Lee
                             </span>
                             
                             
-                            <span>
-                                intro
-                            </span>
-                            
                         </div>
                         <p>
-                            數據分析架構並不是單獨的存在，必需考量企業所能提供的資源及持續改善活動的需求。 每家企業所需的架構並不會相同，這裡我們只討論最簡單的型式，支援解決問題的核心步驟的需求：
+                            簡介： 統計基礎工具的應用介面包含三個功能：
+ Review and Clean Data：檢查數據中是否有重複的資料列，是否有遺失值及極端值。以及對數據做總結及檢視數據分佈。 Comparing Mean：比較平均值，包括 one-sample, two-sample 及 paired-sample。 Comparing Proportion：比較比例，包括 one-proportion, two-proportion 及 paired-proportion。  數據輸入 使用內建數據 應用程式中含有內建的數據，使用者可以使用內建的數據測試及了解介面功能。使用內建數據，勾選左側側邊欄的 &lsquo;Use demo data&rsquo; 即可。如果要使用自己的數據，記得不要勾選這個選項。
+使用者輸入數據的方法 在比較平均值的介面中： 數據內容先用試算(例如 excel 或 google sheet) 輸入數據再儲存成 csv 格式。
+利側邊欄的 &lsquo;Select a CSV file&rsquo; 選擇要分析的 csv 檔。
+數據格式： csv 檔的第一列為欄位名稱，數據從第二列開始。
+ 單一樣本群組 (one-sample)：將數據儲存在第一欄。 兩組樣本群組 (two-sample 及 paired-sample)：包含三個欄位。第一個欄位為每個樣本的 id，每一列為一個樣本, id 不可重複，若無特定 id, 編上流水號也可以。第二欄為樣本的值。第三欄為樣本的群組別，因為是 two-sample，所以應只有兩個群組別。欄位順序可以互換，在介面中，會選擇 id, 樣本值跟群組別相對應的欄位。  在比較比例的介面中： 若是總結的數據，則直接在介面中輸入樣本數及事件發生的數目。
+若是原始資料：
+ 單一樣本群組(one-propprtion)：將數據整理成三個欄位。第一欄為樣本的批次 id, 第二欄為該批次的 event count, 譬如檢查到的缺陷數目，第三欄為該批次的樣本數目。 兩組樣本群組(two-proportion 及 paired-proportion)：除了上述的三個欄位外，再加上一欄樣本群組別。  檔案中的欄位順序不重要，在應用介面中會選擇相對的欄位。
                         </p>
-                        <a href="/intro/intro_frame_data_analysis/" class="btn">Continue Reading</a>
+                        <a href="/intro/2018-12-06-instruction_analysistools/" class="btn">Continue Reading</a>
                     </div>
                 </article>
                 

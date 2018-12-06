@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/intro/instruction_analysistools/</loc>
+    <lastmod>2018-12-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/intro/analysis_frame1/</loc>
     <lastmod>2018-12-03T16:54:54+06:00</lastmod>
   </url>
@@ -49,7 +54,7 @@
   
   <url>
     <loc>/intro/</loc>
-    <lastmod>2018-12-03T16:54:54+06:00</lastmod>
+    <lastmod>2018-12-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -91,7 +96,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-12-03T16:54:54+06:00</lastmod>
+    <lastmod>2018-12-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

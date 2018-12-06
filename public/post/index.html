@@ -15,6 +15,10 @@
     <title>Posts</title>
     <link rel="icon" href="/images/favicon.ico">
 
+    <!-- Google fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto&#43;Sans&#43;TC">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton">
+
     <!-- Twitter Bootstrs CSS -->
     <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
     <!-- Ionicons Fonts Css -->
@@ -41,39 +45,40 @@
             <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <a class="navbar-brand" href="/">
-                        <img src="/images/logo.png" alt="logo">
+                        <img src="/images/logo-2.png" alt="logo">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="/">Home</a>
+                                <a class="nav-link" href="/#"><i class="ion-ios-home" style= "font-size: 35px"></i></a>
                             </li>
                             
-                            <li class="nav-item">
-                                <a class="nav-link" href="/about">About</a>
+                            <li class="nav-item  pad_top">
+                                <a class="nav-link" href="/intro/analysis_frame1">架構介紹</a>
                             </li>
                             
-                            <li class="nav-item">
-                                <a class="nav-link" href="/service">Service</a>
+                            <li class="nav-item  pad_top">
+                                <a class="nav-link" href="/demo">應用範例</a>
                             </li>
                             
-                            <li class="nav-item">
-                                <a class="nav-link" href="/demo">Demo</a>
+
+                            <li class="nav-item  pad_top">
+                                <a class="nav-link" href="/#aboutme">
+                                     關於・我 
+                                </a>
                             </li>
-                            
-                            <li class="nav-item">
-                                <a class="nav-link" href="/blog">Blog</a>
+
+                            <li class="nav-item pad_top">
+                                <a class="nav-link" href="/#cta">
+                                     聯絡我 
+                                </a>
                             </li>
-                            
-                            <li class="nav-item">
-                                <a class="nav-link" href="/contact">Contact</a>
-                            </li>
-                            
+                        </ul>
                     </div>
                 </nav>
             </div>
@@ -88,15 +93,6 @@
             <div class="col-md-12">
                 <div class="block">
                     <h2>Posts</h2>
-                    <ol class="breadcrumb list-inline text-center">
-                        <li class="list-inline-item">
-                            <a href="/">
-                                <i class="ion-ios-home"></i>
-                                Home &nbsp; &nbsp;/
-                            </a>
-                        </li>
-                        <li class="active list-inline-item">Posts</li>
-                    </ol>
                 </div>
             </div>
         </div>
@@ -112,16 +108,16 @@
                 <article class="wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">
                     
                     <div class="blog-post-image">
-                        <a href="/post/test-page/">
+                        <a href="/post/instruction_analysistools/">
                              
                         </a>
                     </div>
                     <div class="blog-content">
                         <h2 class="blogpost-title">
-                            <a href="/post/test-page/">Test page</a>
+                            <a href="/post/instruction_analysistools/">統計基礎工具說明</a>
                         </h2>
                         <div class="blog-meta">
-                            <span>Tuesday, Nov 20, 2018</span>
+                            <span>Thursday, Dec 6, 2018</span>
                             <span>by
                                 Tony Lee
                             </span>
@@ -129,9 +125,16 @@
                             
                         </div>
                         <p>
-                             Test page 測試頁面 
+                            簡介： 統計基礎工具的應用介面包含三個功能：
+ Review and Clean Data：檢查數據中是否有重複的資料列，是否有遺失值及極端值。以及對數據做總結及檢視數據分佈。 Comparing Mean：比較平均值，包括 one-sample, two-sample 及 paired-sample。 Comparing Proportion：比較比例，包括 one-proportion, two-proportion 及 paired-proportion。  數據輸入 使用內建數據 應用程式中含有內建的數據，使用者可以使用內建的數據測試及了解介面功能。使用內建數據，勾選左側側邊欄的 &lsquo;Use demo data&rsquo; 即可。如果要使用自己的數據，記得不要勾選這個選項。
+使用者輸入數據的方法 在比較平均值的介面中： 數據內容先用試算(例如 excel 或 google sheet) 輸入數據再儲存成 csv 格式。
+利側邊欄的 &lsquo;Select a CSV file&rsquo; 選擇要分析的 csv 檔。
+數據格式： csv 檔的第一列為欄位名稱，數據從第二列開始。
+ 單一樣本群組 (one-sample)：將數據儲存在第一欄。 兩組樣本群組 (two-sample 及 paired-sample)：包含三個欄位。第一個欄位為每個樣本的 id，每一列為一個樣本, id 不可重複，若無特定 id, 編上流水號也可以。第二欄為樣本的值。第三欄為樣本的群組別，因為是 two-sample，所以應只有兩個群組別。欄位順序可以互換，在介面中，會選擇 id, 樣本值跟群組別相對應的欄位。  在比較比例的介面中： 若是總結的數據，則直接在介面中輸入樣本數及事件發生的數目。
+若是原始資料：
+ 單一樣本群組(one-propprtion)：將數據整理成三個欄位。第一欄為樣本的批次 id, 第二欄為該批次的 event count, 譬如檢查到的缺陷數目，第三欄為該批次的樣本數目。 兩組樣本群組(two-proportion 及 paired-proportion)：除了上述的三個欄位外，再加上一欄樣本群組別。  檔案中的欄位順序不重要，在應用介面中會選擇相對的欄位。
                         </p>
-                        <a href="/post/test-page/" class="btn btn-dafault btn-details hvr-bounce-to-right">Continue Reading</a>
+                        <a href="/post/instruction_analysistools/" class="btn">Continue Reading</a>
                     </div>
                 </article>
                 
@@ -142,17 +145,31 @@
 
 
 <!-- Call To Action Section Start -->
-<section id="call-to-action">
+<section id="cta">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="block">
-                    <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">SO WHAT YOU THINK ?</h1>
-                    <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis,<br>possimus commodi, fugiat magnam temporibus vero magni recusandae? Dolore, maxime praesentium.</p>
-                    <a href="/contact" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Contact with me</a>
+                    <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms"><div>為您的企業建更強大的<span style='color:#FF8C00'>數據分析</span>與<span style='color:#FF8C00'>持續改善</span>能力</div></h2>
+                    <h2 class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">聯絡我！</h2>
                 </div>
             </div>
+        </div>
 
+        <div class="row address-details">
+            <div class="col-lg-3 col-sm-6"> </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="email wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".7s">
+                    <p><a href="mailto:tonylee@sightingdata.com" style= "color: #FFF"><i class="ion-ios-email-outline" ></i></a></p>
+                    <p><a href="mailto:tonylee@sightingdata.com" style= "color: #FFF">tonylee@sightingdata.com</a></p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="phone wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".9s">
+                    <i class="ion-ios-telephone-outline"></i>
+                    <p>0972-268-529</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -168,7 +185,7 @@
                     <span>
                         <script>document.write(new Date().getFullYear())</script>
                     </span> Design and Developed by
-                    <a href="http://www.sightingdata.com" target="_blank">Sightdata</a>.
+                    <a href="http://www.sightingdata.com" target="_blank">Sightingdata</a>.
                 </p>
             </div>
         </div>

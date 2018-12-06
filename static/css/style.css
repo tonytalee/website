@@ -15,10 +15,6 @@ p {
   font-family: "Noto Sans TC", sans-serif;
 }
 
-p {
-  line-height: 22px;
-  font-weight: 300;
-}
 
 body {
   background: #ffffff;
@@ -81,7 +77,6 @@ a:hover {
 }
 
 .section-heading p, ol {
-  font-size: 18px;
   font-weight: 300;
   color: #727272;
   line-height: 25px;
@@ -169,19 +164,21 @@ a:hover {
 }
 
 .global-page-header {
-  background-attachment: fixed;
-  background-size: cover;
-  padding: 120px 0 25px 0;
-  position: relative;
-  background: #36648B;
-  color: #fff;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 120px 0 25px 0;
+    position: relative;
+    background: #36648B;
+    color: #fff;
 }
 
 .global-page-header h2 {
-  font-size: 42px;
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
+    font-size: 42px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    padding-top: 60px;
+    padding-bottom: 20px;
 }
 
 .global-page-header .breadcrumb {
@@ -1036,42 +1033,64 @@ article {
   border-radius: 0;
 }
 
-/* work single */
-.work-single {
+/* intro single */
+.intro-single {
     padding: 49px;
 }
-.work-single h3 {
-  font-size: 30px;
-  margin-bottom: 25px;
-}
 
-.work-single-image {
+.intro-single-image {
   margin-bottom: 35px;
 }
 
-.work-single-content p, ol {
-    font-size: 18px;
-    font-weight: 300;
-    color: #727272;
-    margin-top: 25px;
+.intro-single-content ul li {
+    list-style: circle;
+}
+
+.intro-single-content h1 {
+    font-size: 38px;
+    color: black;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.intro-single-content h2 {
+    font-size: 28px;
+    color: black;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.intro-single-content h3 {
+    font-size: 20px;
+    color: black;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.intro-single-content p, ol, ul {
+    font-size: 16px;
+    color: #636363;
+    margin-top: 10px;
     margin-bottom: 5px;
 }
 
-.work-single blockquote {
+.intro-single-content ol, ul {
+    margin-left: 30px;
+}
+
+.intro-single blockquote {
     margin-bottom: 30px;
     padding: 30px 25px;
     background: #eae9ec;
     color: #848484;
 }
 
-.work-single blockquote p {
-    margin-bottom: 0;
-    font-size: 22px;
+.intro-single blockquote p {
     color: black;
     font-family: "cwTexFangSong", "Neuton", serif;
 }
 
-.work-single-sidebar {
+.intro-single-sidebar {
     background: #eae9ec;
     margin: 70px 0 50px;
     position: -webkit-sticky;
@@ -1080,15 +1099,15 @@ article {
     padding: 30px 25px;
 }
 
-.work-single-sidebar h5 {
+.intro-single-sidebar h5 {
     margin-bottom: 8px;
 }
 
-.work-single-sidebar h6 {
+.intro-single-sidebar h6 {
     margin-bottom: 20px;
 }
 
-.btn-work {
+.btn-intro {
     color: #fff;
     background: #02bdd5;
     border-radius: 0;
