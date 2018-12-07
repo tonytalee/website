@@ -14,7 +14,7 @@
                         <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
                             <h2>
                             {{ with .title }}<span>{{ . }}</span>{{ end }}
-                            {{ with .link }}<span><a href="{{ . }}" class="btn">應用範例</a></span>{{ end }}
+                            <span><a href="{{ .link }}" class="btn">{{ .btnTxt }}</a></span>
                             {{ with .inst }}<span><a href="{{ . }}" class="btn">應用說明</a></span>{{ end }}
                             </h2>
                             {{ with .content }}<p>{{ . | safeHTML }}</p>{{ end }}
