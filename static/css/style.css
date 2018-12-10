@@ -1,6 +1,7 @@
 
 body {
   font-family: "Noto Sans TC", sans-serif;
+    background: #ffffff;
 }
 
 h1,
@@ -11,11 +12,6 @@ h5,
 h6,
 p {
   font-family: "Noto Sans TC", sans-serif;
-}
-
-
-body {
-  background: #ffffff;
 }
 
 ul {
@@ -1077,7 +1073,7 @@ article {
 }
 
 .intro-single p b, strong {
-    color:#4682B4
+    color:#36648B
 }
 
 .intro-single blockquote {
