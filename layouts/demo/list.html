@@ -15,7 +15,7 @@
                             <h2>
                             {{ with .title }}<span>{{ . }}</span>{{ end }}
                             <span><a href="{{ .link }}" class="btn">{{ .btnTxt }}</a></span>
-                            {{ with .inst }}<span><a href="{{ . }}" class="btn">應用說明</a></span>{{ end }}
+                            {{ with .inst }}<span><a href="{{ . }}" class="btn">使用說明</a></span>{{ end }}
                             </h2>
                             {{ with .content }}<p>{{ . | safeHTML }}</p>{{ end }}
                         </div>
