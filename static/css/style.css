@@ -167,8 +167,8 @@ a:hover {
 }
 
 .global-page-header h2 {
+    font-family: 'Noto Serif TC', serif;
     font-size: 42px;
-    font-weight: bold;
     color: #fff;
     text-transform: uppercase;
     padding-top: 60px;
