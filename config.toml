@@ -9,6 +9,9 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 preserveTaxonomyNames = true
 paginate = 10
 
+[permalinks]
+    note = "/note/:year/:month/:day/:slug/"
+
 # Site Menus
 [menu]
     # Navbar Menus
@@ -28,6 +31,9 @@ paginate = 10
     logo = "images/logo-2.png"
     logo_alt = "logo"
     #logo_text = "logo_text"
+    
+    # side bar
+    featured_tags = true
 
     # Navigation
     [params.navigation]
@@ -48,7 +54,7 @@ paginate = 10
      # Intro Section On Homepage
     [params.intro]
         enable  = true
-        bgImage = "images/white1.jpg"
+        #bgImage = "images/white1.jpg"
         title   = "數據分析架構介紹"
         subtitle= "數據分析應用至..."
 

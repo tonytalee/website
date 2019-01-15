@@ -56,22 +56,22 @@ csv 檔的第一列為欄位名稱，數據從第二列開始。
 
 使用者可以選擇 auto 讓程式自動運算合適的檢定方法，也可以自行選擇。不論是 auto 或是自行選擇，介面都會帶出相關的數據型態檢查結果，像離群值及常態分佈的檢驗。
 
-<img src="/images/intro/t-test-ui.png" alt="", style="width:1000px">
+<img src="/images/intro/t-test-ui.png" alt="", style="width:800px">
 
 ### 自動檢查離群值及常態分佈，並產生圖形輔助分析
-<img src="/images/intro/t-test-analysis.png" alt="", style="width:1000px">
+<img src="/images/intro/t-test-analysis.png" alt="", style="width:800px">
 
 ### t-test 的結果輸出
 
 由於 t-test 會產生較多的有用資訊，若數據型態不符合使用 t-test，儘量檢查數據的內容，看看是否含有錯誤的數據。
 
-<img src="/images/intro/t-test-result.png" alt="", style="width:1000px">
+<img src="/images/intro/t-test-result.png" alt="", style="width:800px">
 
 若數據中含有嚴重離群值，最好是檢查數據的正確性或者與檢定目的的相關性。貿然去除離群值是不科學的做法，但若不仔細檢查離群值的可靠性，則會增加型二的風險，亦即，可能平均值已有差異，但檢定結果卻無法判別出來。如數據分佈型態偏離常態分佈，試著用 log 或 box-cox 先轉換數據。
 
 ### 如果數據型態不適合用 t-test，可使用非參數化的檢定， Wilcoxon signed rank test
 
-<img src="/images/intro/wilcox-result.png" alt="", style="width:1000px">
+<img src="/images/intro/wilcox-result.png" alt="", style="width:800px">
 
 ---
 
@@ -98,11 +98,11 @@ csv 檔的第一列為欄位名稱，數據從第二列開始。
 
 (當樣本數太少，且事件發生比例極高或極低時，會使用 Fisher's exact test 取代 proportion test。)
 
-<img src="/images/intro/oneProp_summariedInput.png" alt="", style="width:1000px">
+<img src="/images/intro/oneProp_summariedInput.png" alt="", style="width:800px">
 
 ### 檢定結果輸出
 
-<img src="/images/intro/oneProp-test-result.png" alt="", style="width:1000px">
+<img src="/images/intro/oneProp-test-result.png" alt="", style="width:800px">
 
 ### 以 p-chart 檢驗批次的穩定性
 
@@ -110,4 +110,4 @@ csv 檔的第一列為欄位名稱，數據從第二列開始。
 
 (注意！範例中 p-chart 的批次樣本數量並不一致，所以管制界限會隨樣本數量而變。)
 
-<img src="/images/intro/oneProp-test-pChart.png" alt="", style="width:1000px">
+<img src="/images/intro/oneProp-test-pChart.png" alt="", style="width:800px">

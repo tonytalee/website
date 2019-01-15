@@ -1,0 +1,65 @@
+{{ partial "header.html" . }}
+
+{{ partial "page-title.html" . }}
+
+<section id="blog-full-width">
+    <div class="container">
+        <div class="row">
+            <!--- Post container --->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+                {{ range .Data.Pages }}
+                <article class="wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">
+                    
+                    <div class="blog-post-image">
+                        <a href="{{ .Permalink }}">
+                             {{ with .Params.image }}<img class="img-fluid" src="{{ . | absURL }}" alt="post-image"/>{{ end }}
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <h2 class="blogpost-title">
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        </h2>
+                        <div class="blog-meta">
+                            <span>{{ dateFormat "Monday, Jan 2, 2006" .Date }}</span>
+                            {{ with .Params.author }}<span>by
+                                {{ . }}
+                            </span>
+                            {{ end }}
+                            {{ with .Params.tags }}
+                            <span>
+                                {{ delimit . ", " }}
+                            </span>
+                            {{ end }}
+                        </div>
+                        <p>
+                            {{ .Summary }}
+                        </p>
+                        {{ with .Permalink }}<a href="{{ . }}" class="btn">Continue Reading</a>{{ end }}
+                    </div>
+                </article>
+                {{ end }}
+            </div>
+            <!--- Side bar --->
+            <div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-12 col-xs-12 sidebar-container">
+                <!--- Tags --->
+                {{ if .Site.Params.featured_tags }}
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>TAGS</h5>
+                    <div class="tags">
+                        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                            <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" title="{{ $name }}">
+                                {{ $name }}
+                            </a>
+                        {{ end }}
+                    </div>
+                </section>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ partial "cta.html" . }}
+
+{{ partial "footer.html" . }}

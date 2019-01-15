@@ -1,13 +1,16 @@
 {{ "<!-- Footer Section Start -->" | safeHTML }}
 <footer id="footer">
+    {{ partial "foot_custom.html" . }}
     <div class="container">
+        <hr>
         <div class="row content-justify-between">
             <div class="col-md-8 col-12 text-center text-lg-left text-md-left">
                 <p class="copyright">Copyright:
                     <span>
                         <script>document.write(new Date().getFullYear())</script>
-                    </span> Design and Developed by
-                    <a href="http://www.sightingdata.com" target="_blank">Sightingdata</a>.
+                    </span>
+                    <a href="http://www.sightingdata.com" target="_blank">Sightingdata.</a>
+                    All Rights Reserved.
                 </p>
             </div>
         </div>
