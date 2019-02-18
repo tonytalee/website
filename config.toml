@@ -69,7 +69,7 @@ paginate = 10
     # Call to Action
     [params.cta]
         enable  = true
-        title   = "<div>為您的企業建更強大的<span style='color:#FF8C00'>數據分析</span>與<span style='color:#FF8C00'>持續改善</span>能力</div>"
+        title   = "<div>為您的企業建數據分析與持續改善的整合能力"
         content = "聯絡我！"
         mail = "tonylee@sightingdata.com"
         phone = "0972-268-529"

@@ -3,11 +3,14 @@ title   : 應用範例
 subtitle: 運用資料分析到問題解決及持續改善的實務
 content: >
     <p>這裡介紹幾個簡單的資料分析應用範例，企業在實務應用時，很可能需要比這些範例更複雜的的功能。但無論是簡單或者複雜的分析架構，基本上，都是針對要解決的問題，整合相關的數據分析功能到同一個介面上，幫助使用者可以確實、方便的完成他的工作。</p>
+    <p>其中， GRR分析及統計基礎工具是可自行上傳資料做分析的應用程式，也內含 demo 的資料讓使用者可快速的檢視應用程式提供的內容。若讀者想要安裝這兩個應用程式在自己的電腦上，以避免上傳資料的困擾或網路連結的限制，請<a href= "#cta">聯絡我</a>。這些應用程式都是用 R 語言編寫的，安裝上相當容易。</p>
 demoItem :
   - title: GRR 分析
     content: >
         <b>Crossed GRR 分析介面</b>
         <p>這個應用程式運用 ANOVA 分析 crossed GRR 的研究數據，輸出圖表並依據結果給予輔助說明，幫助使用者了解 GRR 研究的結果。</p>
+        <p>如何解讀 GRR 分析結果，<a href= "/post/grr_interpret">參考連結</a>。</p>
+        <p>GRR baseline 應用介紹，<a href= "/post/grr_baseline_application">參考連結</a>。</p>
     link: http://shiny.sightingdata.com/shiny/grr
     btnTxt: "GRR 分析介面"
     inst: /intro/instruction_grr
