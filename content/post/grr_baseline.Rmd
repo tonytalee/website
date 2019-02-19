@@ -381,7 +381,6 @@ li_spc <- Xbar_R(df_resi, x_var = "Group", y_var = "Residual",
                  xlab = "run-operator-parts",
                  color_set = color_set[1:4], zoneStrip = F)
 li_spc$p
-
 ```
 
 X&#772;-R chart 顯現出，當次量測的平均值波動及全距都比 baseline 來得大。也沒有特別的零件或操作員造成異常。
