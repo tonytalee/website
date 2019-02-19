@@ -8,7 +8,7 @@ tags: ["GRR"]
 ---
 
 ```{r global_options, include=FALSE} 
-knitr::opts_chunk$set(dev='png',echo=FALSE, warning=FALSE, message=FALSE, dpi=72, fig.width= 6, fig.asp = 0.618, cache = F) 
+knitr::opts_chunk$set(dev='png',echo=FALSE, warning=FALSE, message=FALSE, dpi=72, fig.width= 6, fig.asp = 0.618, cache = T) 
 
 options(knitr.kable.NA = '')
 ```
