@@ -18,11 +18,7 @@ options(knitr.kable.NA = '')
 library(formattable)
 library(kableExtra)
 library(knitr)
-library(shiny)
-library(shinydashboard)
 library(DT)
-library(shinyjs)
-library(shinycssloaders)
 library(lubridate)
 library(scales)
 library(ggplot2)
@@ -40,7 +36,9 @@ library(setPlotly)
 library(spcChart)
 library(qcc)
 library(car)
-source("./function/functions.R")
+source("./function/grr_functions.R")
+source("./function/spc_functions.R")
+source("./function/html_setting.R")
 
 df_his <- read.csv("./data/grr_data_collection.csv", stringsAsFactors = F)
 li <- readRDS("./data/li_grr_raw.rds")
@@ -225,7 +223,7 @@ Baseline 中，%GRR 為 14.2, R&R 對變異數的貢獻度 (Contribution)為 2%,
 
 ```{r}
 df <- li$`2019-01-14`
-li_grr <- fun.grr.std(df)
+li_grr <- Grr_plot(df)
 tb_grr <- li_grr$tb_grr
 
 colnames = c("Variance", "Std. Dev.", "Study Var.", "% Study Var.", 
@@ -341,7 +339,7 @@ kable(df_comparison, col.names = c("F statistic", "p-value"), digits = 3) %>%
 
 從比較最近一次測試與 baseline 的結果，重複性變差應是最近一次測試 %GRR 變差的原因。我們進一步把 baseline 中包含的三次測試及當次測試的數據扣除零件及操作員再現性的變異之後，再把殘值(即以零件跟操作員為因子做 ANOVA 的 residuals)做成 X&#772;-R chart 以單純比較重複性的變異：
 
-```{r, fig.width=12, fig.asp=0.4, dpi= 72, results= "asis"}
+```{r, fig.width=10, fig.asp=0.4, dpi= 72, results= "asis"}
 Grr_residue <- function(df) {
     df <- as.data.frame(df)
     names(df) <- c("Operator", "Part", "Trial", "Value")
@@ -374,15 +372,15 @@ for (run in c("2018-10-11", "2018-11-11", "2018-12-11", "2019-01-14")) {
 df_resi <- mutate(df_resi, Group = paste(Run, Operator, Part, sep= "-"))
 
 # SPC chart
-li_spc <- Xbar_R(df_resi, x_var = "Group", y_var = "Residual", 
+li_spc <- Xbar_R_n(df_resi, x_var = "Group", y_var = "Residual", 
                  info_var = c("Operator", "Part"), 
                  group_var = c("Run", "Operator", "Part"), 
                  color_var = "Run", 
                  xlab = "run-operator-parts",
-                 color_set = color_set[1:4], zoneStrip = F)
+                 color_set = color_set[1:4], zoneStrip = F, chart_format = "gg")
+li_spc$p
 ```
 
-`r li_spc$p`
 
 <br>
 

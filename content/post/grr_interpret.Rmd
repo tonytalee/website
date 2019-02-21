@@ -18,11 +18,7 @@ options(knitr.kable.NA = '')
 library(formattable)
 library(kableExtra)
 library(knitr)
-library(shiny)
-library(shinydashboard)
 library(DT)
-library(shinyjs)
-library(shinycssloaders)
 library(lubridate)
 library(scales)
 library(ggplot2)
@@ -40,7 +36,9 @@ library(setPlotly)
 library(spcChart)
 library(qcc)
 library(car)
-source("./function/functions.R")
+source("./function/grr_functions.R")
+source("./function/spc_functions.R")
+source("./function/html_setting.R")
 
 df_g <- read.csv("./data/grr_data_good.csv", stringsAsFactors = F)
 df_b <- read.csv("./data/grr_data_bad.csv", stringsAsFactors = F)
@@ -48,7 +46,7 @@ df_b <- read.csv("./data/grr_data_bad.csv", stringsAsFactors = F)
 #--- calculate grr
 # good grr 
 tolerance = 85
-li_grr_g <- fun.grr.std(df_g, tolerance)
+li_grr_g <- Grr_plot(df_g, tolerance)
 tb_grr_g <- li_grr_g$tb_grr
 
 # form html table
@@ -79,7 +77,7 @@ if (nrow(tb_grr_g) > 5) {
 
 # bad grr 
 tolerance = 120
-li_grr_b <- fun.grr.std(df_b, tolerance)
+li_grr_b <- Grr_plot(df_b, tolerance)
 tb_grr_b <- li_grr_b$tb_grr
 
 # form html table
@@ -119,7 +117,7 @@ if (nrow(tb_grr_b) > 5) {
 
 GRR 主要是研究量測系統的變異。我們把量測結果的變異來源分為二個類別：來自於被量測零件 (part) 的變異，以及來自於量測系統 (MS, measurement system) 本身的變異。總變異數等於零件的變異數加上量測系統的變異數：
 
-`$$\sigma^{2}_{total} = \sigma^2_{parts} + \sigma^2_{MS}$$`
+$$\sigma^{2}_{total} = \sigma^2_{parts} + \sigma^2_{MS}$$
 
 <br>
 
@@ -200,12 +198,16 @@ Bad GRR 的 `%GRR` 為 81.0，即 R&R 的變異是總變異的 81%。而 part �
 
 <div class= 'plotx'>
 <p style= 'color:red; font-weight:bold;'>Good GRR</p>
-`r li_grr_g$p_comp`
+```{r, fig.width=10, fig.asp= 0.4}
+li_grr_g$p_comp
+```
 </div>
 
 <div class= 'plotx'>
 <p style= 'color:red; font-weight:bold;'>Bad GRR</p>
-`r li_grr_b$p_comp`
+```{r, fig.width=10, fig.asp= 0.4}
+li_grr_b$p_comp
+```
 </div>
 
 <br>
@@ -240,12 +242,16 @@ Component of variatiion 把 GRR table 中的 `% Study Variation`, `% Contributio
 
 <div class= 'plotx'>
 <p style= 'color:red; font-weight:bold;'>Good GRR</p>
-`r li_grr_g$li_spc$p`
+```{r, fig.width=10, fig.asp= 0.4}
+li_grr_g$li_spc$p
+```
 </div>
 
 <div class= 'plotx'>
 <p style= 'color:red; font-weight:bold;'>Bad GRR</p>
-`r li_grr_b$li_spc$p`
+```{r, fig.width=10, fig.asp= 0.4}
+li_grr_b$li_spc$p
+```
 </div>
 
 <br>
@@ -264,12 +270,16 @@ Component of variatiion 把 GRR table 中的 `% Study Variation`, `% Contributio
 
 <div class= 'plotx'>
 <p style= 'color:red; font-weight:bold;'>Good GRR</p>
-`r li_grr_g$p_oper`
+```{r, fig.width=10, fig.asp= 0.4}
+li_grr_g$p_oper
+```
 </div>
 
 <div class= 'plotx'>
 <p style= 'color:red; font-weight:bold;'>Bad GRR</p>
-`r li_grr_b$p_oper`
+```{r, fig.width=10, fig.asp= 0.4}
+li_grr_b$p_oper
+```
 </div>
 
 <br>
@@ -281,12 +291,16 @@ Component of variatiion 把 GRR table 中的 `% Study Variation`, `% Contributio
 
 <div class= 'plotx'>
 <p style= 'color:red; font-weight:bold;'>Good GRR</p>
-`r li_grr_g$p_inter`
+```{r, fig.width=10, fig.asp= 0.4}
+li_grr_g$p_inter
+```
 </div>
 
 <div class= 'plotx'>
 <p style= 'color:red; font-weight:bold;'>Bad GRR</p>
-`r li_grr_b$p_inter`
+```{r, fig.width=10, fig.asp= 0.4}
+li_grr_b$p_inter
+```
 </div>
 
 <br>
@@ -299,12 +313,16 @@ Good GRR 的 ANOVA p-value 判斷 Operator 跟 Part 沒有交互作用。 觀察
 
 <div class= 'plotx'>
 <p style= 'color:red; font-weight:bold;'>Good GRR</p>
-`r li_grr_g$p_part`
+```{r, fig.width=10, fig.asp= 0.4}
+li_grr_g$p_part
+```
 </div>
 
 <div class= 'plotx'>
 <p style= 'color:red; font-weight:bold;'>Bad GRR</p>
-`r li_grr_b$p_part`
+```{r, fig.width=10, fig.asp= 0.4}
+li_grr_b$p_part
+```
 </div>
 
 <br>
