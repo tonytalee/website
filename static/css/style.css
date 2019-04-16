@@ -19,7 +19,7 @@ ul {
 }
 
 ul li {
-    list-style: none;
+    list-style:disc;
 }
 
 a {
@@ -460,9 +460,16 @@ a:hover {
 }
 
 #aboutme {
-  padding: 110px 0;
+  padding: 30px 0;
 }
 
+.lg-margin {
+    margin-left: 70px;
+    padding-left: 30px;
+    border-left-color: gray;
+    border-left-style: solid;
+    border-left-width: thin;
+}
 #aboutme .block {
   padding: 20px 30px 0 30px;
 }

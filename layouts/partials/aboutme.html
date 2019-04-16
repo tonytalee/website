@@ -3,23 +3,26 @@
 <section id="aboutme">
     <div class="container">
         <div class="row">
-            <div class="block col-md-12 text-center">
-                <div class="block wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
-                    {{ with .Site.Params.aboutme.image }}<img src="{{ . | absURL }}" width= "150px" alt="aboutme-image">{{ end }}
-                </div>
-                {{ with .Site.Params.aboutme.title }}<h4>{{ . }}</h4>{{ end }}
-            </div>
+            <div class="title col-sm-12">關於 </div>
         </div>
         <div class="row">
-             <div class="col-sm-6">
-                <div class="block wow fadeInLeft" data-wow-delay=".3s" data-wow-duration="500ms">
-                    {{ with .Site.Params.aboutme.content_l }}<p>{{ . | safeHTML }}</p>{{ end }}
-                </div>
+             <div class="col-sm-4">
+                <h4>關於我</h4>
+                 <br>
+                <p>李東安 - 專注於應用數據分析的技能，系統化的解決製造、製程的問題。</p>
+                <ul>
+                    <li>25年的半導體及微機電產業經歷，札實的問題解決的實務歷練。</li>
+                    <li>熟稔工程統計及數據分析程式語言(R、Python)。 </li>
+                    <li>流暢的將統計、數據分析融入 6-Sigam、8D 等問題解決的情境中。</li>
+                    <li>以解決問題為核心，客製化解決問題所需要的數據分析架構</li>
+                </ul>
             </div>
-            <div class="col-sm-6">
-                <div class="block wow fadeInLeft" data-wow-delay=".3s" data-wow-duration="500ms">
-                    {{ with .Site.Params.aboutme.content_r }}<p>{{ . | safeHTML }}</p>{{ end }}
-                </div>
+            <div class="col-sm-7 lg-margin">
+                <h4>數據觀點</h4>
+                <br>
+                <p>企業建立數據分析的能力，是一件重要的事，但並非一定是一件花大錢的事。</p>
+                <p>數據分析，不論是大數據或小數據，重點是在解決問題，因此，我們要先聚焦在要解決的問題上，再決定要建造何種數位架構，選擇適當的分析工具及技術。</p>
+                <p>對於製造商而言，如果問題是在增加生產力、提升良率、降低成本，甚至到推行精實生產等這些相關的務實工作，那麼，善用開源的軟體工具，加上投資整合需要的人力，就可以產生很大的效益。而且這對所有的公司，如果有意願，幾乎是都可以達到的。</p>
             </div>
         </div>
     </div>
