@@ -14,10 +14,6 @@ p {
     font-family: "Noto Sans TC", sans-serif;
 }
 
-ul {
-    padding-left: 0;
-}
-
 ul li {
     list-style:disc;
 }
@@ -109,10 +105,6 @@ a:hover {
   font-weight: 300;
 }
 
-.pages {
-  padding: 80px 0 40px;
-}
-
 .moduler {
   padding: 140px 0;
 }
@@ -166,17 +158,17 @@ a:hover {
     background-size: cover;
     padding: 30px 0 10px 0;
     position: relative;
-    background: #36648B;
+    background: #fff;
     color: #fff;
 }
 
 .global-page-header h2 {
     font-family: 'Noto Serif TC', serif;
     font-size: 42px;
-    color: #fff;
+    color: black;
     text-transform: uppercase;
     padding-top: 60px;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
 }
 
 .global-page-header .breadcrumb {
@@ -201,14 +193,16 @@ a:hover {
     max-width: 800px;
     padding: 100px 0 30px 0;
     position: relative;
-    margin: auto
+    margin: auto;
+    text-align: center;
+    font-family: 'Noto Serif TC', serif;
 }
 
 .post-header h2 {
-    font-family: 'Noto Serif TC', serif;
     font-size: 42px;
     padding-top: 60px;
     padding-bottom: 20px;
+    font-family: 'Noto Serif TC', serif;
 }
 
 
@@ -454,6 +448,13 @@ a:hover {
   margin-right: 10px;
 }
 
+#cta .address-details {
+    padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+}
+
 #cta .block .btn-contact:hover {
   color: #fff;
   background: #36648B;
@@ -463,13 +464,6 @@ a:hover {
   padding: 30px 0;
 }
 
-.lg-margin {
-    margin-left: 70px;
-    padding-left: 30px;
-    border-left-color: gray;
-    border-left-style: solid;
-    border-left-width: thin;
-}
 #aboutme .block {
   padding: 20px 30px 0 30px;
 }
@@ -575,6 +569,11 @@ figure {
 figure .img-wrapper {
   position: relative;
   overflow: hidden;
+}
+
+.img-wrapper {
+    max-width: 550px;
+    margin: 15px;
 }
 
 figure img {
@@ -948,7 +947,10 @@ article {
 }
 
 #contact-section .address-details {
-  padding-top: 70px;
+    padding-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
 }
 
 #map-canvas {
@@ -997,10 +999,6 @@ article {
 }
 
 /* single post */
-.single-post {
-  padding: 20px 0 20px;
-}
-
 .single-post .post-content {
   padding: 40px 0;
 }
@@ -1467,17 +1465,24 @@ table {
     font-size: 14px;
 }
 
-.post-content, .intro-single-content, .demo-page {
+.blocktext, .post-content, .intro-single-content, .demo-page {
     max-width:  800px;
     margin: auto;
 }
 
 .post-content h2{
-    background-color: aliceblue;
-    padding: 10px 10px 10px 30px;
     margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.post-content h3{
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+.post-content h4{
+    margin-top: 30px;
     margin-bottom: 10px;
-    font-family: 'Times New Roman', serif;
 }
 
 .plotx {

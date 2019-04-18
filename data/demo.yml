@@ -9,8 +9,9 @@ demoItem :
     content: >
         <b>Crossed GRR 分析介面</b>
         <p>這個應用程式運用 ANOVA 分析 crossed GRR 的研究數據，輸出圖表並依據結果給予輔助說明，幫助使用者了解 GRR 研究的結果。</p>
-        <p>如何解讀 GRR 分析結果，<a href= "/post/grr_interpret">參考連結</a>。</p>
-        <p>GRR baseline 應用介紹，<a href= "/post/grr_baseline_application">參考連結</a>。</p>
+        <p><b>相關連結：</b></p>
+        <a href= "/post/grr_interpret">如何解讀 GRR 分析結果</a><br>
+        <a href= "/post/grr_baseline_application">GRR baseline 應用介紹</a>
     link: http://shiny.sightingdata.com/shiny/grr
     btnTxt: "GRR 分析介面"
     inst: /intro/instruction_grr
@@ -29,6 +30,8 @@ demoItem :
     content: >
       <b>在這個應用範例中，我們將 SPC 相關的資訊整合至同一個介面，讓使用者更輕鬆且完整的的監控管制項目及分析異常。</b>
       <p>除了藉由管制圖呈現製程的穏定性之外，SPC 儀表板由總覧綜合指標的現況及其變化開始，再例出每一個製程管制項目的製程能指標，讓使用者可以輕鬆的檢視每個項目的製程能力及過去的變化。同時依據設定好的對相關因子做變異分析，讓使用者面對異常狀況時，可以迅速的依據相關因子的變化及差異，更正確的採取行動。</p>
+      <p><b>相關連結：</b></p>
+        <a href= "/post/control_chart_key_concepts">管制圖要有效的五個重要觀念</a><br>
       
     link:  http://shiny.sightingdata.com/shiny/SPC_demo
     btnTxt: SPC 儀表板

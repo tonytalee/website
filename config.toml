@@ -66,7 +66,7 @@ paginate = 10
     # Call to Action
     [params.cta]
         enable  = true
-        title   = "聯絡方式"
+        title   = ""
         content = "如果需要了解更多，或者需要問題解決與數據分析的協助，聯絡我。"
         mail = "info@sightingdata.com"
         phone = "0972-268-529"

@@ -13,8 +13,8 @@ tags: ["GRR"]
 <p>這裡，我們模擬兩個比較極端的 GRR 例子：Good GRR 和 Bad GRR。藉由這兩個例子的結果來說明如何解讀 GRR 的分析。</p>
 <div id="grr-" class="section level2">
 <h2>GRR 基本概念</h2>
-<div class="section level3">
-<h3>量測的變異</h3>
+<div class="section level4">
+<h4>量測的變異</h4>
 <p>GRR 主要是研究量測系統的變異。我們把量測結果的變異來源分為二個類別：來自於被量測零件 (part) 的變異，以及來自於量測系統 (MS, measurement system) 本身的變異。總變異數等於零件的變異數加上量測系統的變異數：</p>
 <p><span class="math display">\[\sigma^{2}_{total} = \sigma^2_{parts} + \sigma^2_{MS}\]</span></p>
 <p><br></p>
@@ -22,8 +22,8 @@ tags: ["GRR"]
 <p><span class="math display">\[\sigma^2_{total} = \sigma^2_{parts} + \sigma^2_{repeatability} + \sigma^2_{reproducibility}\]</span></p>
 <p>重複性指在相同情況下，量測系統量測相同零件，獲得相同結果的能力。再現性指量測系統在不同的情況下，例如不同的操作人員，量測系統維持量測一致性的能力。</p>
 </div>
-<div class="section level3">
-<h3>評估量測系統重複及再現能力</h3>
+<div class="section level4">
+<h4>評估量測系統重複及再現能力</h4>
 <p>量測系統的變異數加上零件的變異數，總合會為 100%。藉由分析變異數的比例，可以了解在全部的量測變異中，各個分類各佔多少比重。當需要改善量測系統能力時，這會幫助我們先釐清主要變異的來源。</p>
 <p>標準差的單位會跟零件量測的單位相同，所以使用標準差來分析量具重複性及再現性 (簡稱為 R&amp;R) 的結果，會產生比較有意義的比較。<code>%GRR</code> 是 GRR 跟 total variation 在標準差的比率(以%為單位），藉於這個比率來比較重複性跟再現性的變異與整體量測的變異，以評估量測系統的重複量測及再現性的能力。</p>
 <p><br></p>
@@ -43,8 +43,8 @@ tags: ["GRR"]
 </div>
 <div id="grr-" class="section level2">
 <h2>GRR 分析說明</h2>
-<div id="grr-table" class="section level3">
-<h3>GRR table</h3>
+<div id="grr-table" class="section level4">
+<h4>GRR table</h4>
 <div class="plotx">
 <p style="color:red; font-weight:bold;">
 Good GRR
@@ -404,8 +404,8 @@ Total Variation
 <p>Bad GRR 的 <code>%GRR</code> 為 81.0，即 R&amp;R 的變異是總變異的 81%。而 part 的變異是總變異的 58.7%。量測系統所造成的變異遠大於零件間的變異，這樣的量測能力顯然無分辨零件的差異。</p>
 <p>進一步分析 Bad GRR 的變異可利用 <code>%Contribution</code> 這個欄位的資訊。R&amp;R 貢獻了 65.6%的變異量，其中，重複性佔了 20.8%, operator 佔了 30.1%, 而 operator 跟 part 的交互作用佔了 14.6%。雖然 operator 貢獻了最多的變異，但其餘兩種變異也不容忽略，要改善這個量測系統的能力，這三個變異來源都要同時改善。<br></p>
 </div>
-<div id="component-of-variation" class="section level3">
-<h3>Component of variation</h3>
+<div id="component-of-variation" class="section level4">
+<h4>Component of variation</h4>
 <div class="plotx">
 <p style="color:red; font-weight:bold;">
 Good GRR
@@ -421,8 +421,8 @@ Bad GRR
 <p><br></p>
 <p>Component of variatiion 把 GRR table 中的 <code>% Study Variation</code>, <code>% Contribution</code>, 及 <code>% Tolerance</code> 的欄位做成長條圖來呈現變異分類的相對關係。</p>
 </div>
-<div id="anova-table" class="section level3">
-<h3>ANOVA table</h3>
+<div id="anova-table" class="section level4">
+<h4>ANOVA table</h4>
 <div class="plotx">
 <p style="color:red; font-weight:bold;">
 Good GRR
@@ -626,8 +626,8 @@ Residuals
 <li><p>在 Bad GRR 中，除了 Operator 有顯著的效應外，Operator 跟 Part 也出現交互作用的效應，表示 Operator 在量測零件時沒有一致性，例如量測某些零件時會偏大，而某些零件又會偏小。交互作用的效應應配合 Interaction of operator by part 圖來解讀。</p></li>
 </ul>
 </div>
-<div id="x-r-chart" class="section level3">
-<h3>X̄-R chart</h3>
+<div id="x-r-chart" class="section level4">
+<h4>X̄-R chart</h4>
 <div class="plotx">
 <p style="color:red; font-weight:bold;">
 Good GRR
@@ -641,16 +641,16 @@ Bad GRR
 <p><img src="/post/grr_interpret_files/figure-html/unnamed-chunk-7-1.png" width="720" /></p>
 </div>
 <p><br></p>
-<div id="x-chart" class="section level4">
-<h4>X̄ chart</h4>
+<div id="x-chart" class="section level5">
+<h5>X̄ chart</h5>
 <ul>
 <li>在正常量測系統的 GRR，X̄ chart 應該呈現大部分的點都落在管制界限外。這是因為組內 的樣本數據是同一個零件重複量測的結果，所以組內的全距應該會很小，管制限界又是由組內全距計算得來，因此會得到一組間隔很小的管制界限。</li>
 <li>在 Good GRR 中，有 93% 的點在管制界限外，代表量測系統可以偵測到零件間的差異。</li>
 <li>在 Bad GRR 中，僅有 52% 的點在管制界限外，，代表量測系統偵測零件差異的能力有限。</li>
 </ul>
 </div>
-<div id="r-chart" class="section level4">
-<h4>R chart</h4>
+<div id="r-chart" class="section level5">
+<h5>R chart</h5>
 <ul>
 <li>在正常量測系統的 GRR，R chart 應該呈現所有的點都在管制界限內。R chart 在管制界限外的點代表量測的重複性不良。</li>
 <li>在 Good GRR 中，有 96% 的點在管制界限內，代表量測系統有不錯的量測一致性。但其中有一點，超出管制界限。在實務上，R chart 超出管制界限的點，最好深入探究原因。</li>
@@ -658,8 +658,8 @@ Bad GRR
 </ul>
 </div>
 </div>
-<div id="measuremnt-by-operator" class="section level3">
-<h3>Measuremnt by Operator</h3>
+<div id="measuremnt-by-operator" class="section level4">
+<h4>Measuremnt by Operator</h4>
 <div class="plotx">
 <p style="color:red; font-weight:bold;">
 Good GRR
@@ -678,8 +678,8 @@ Bad GRR
 <li>比較三個 Operator 的盒鬚圖長度和離群值的分佈，可以分析三個 Operator 在量測時是否產生相同的變異。在 Bad GRR 中，Operator B 跟 C 有比 A 更廣的分佈，表示 B 跟 C 在量測時有較大的變異。在 GRR 分析的應用程式中，會運用 Levene’s test 做變異數的比較以輔助判斷 Operator 之間是否有不同的量測變異。</li>
 </ul>
 </div>
-<div id="interaction-of-operator-by-part" class="section level3">
-<h3>Interaction of operator by part</h3>
+<div id="interaction-of-operator-by-part" class="section level4">
+<h4>Interaction of operator by part</h4>
 <div class="plotx">
 <p style="color:red; font-weight:bold;">
 Good GRR
@@ -696,8 +696,8 @@ Bad GRR
 <p>Good GRR 的 ANOVA p-value 判斷 Operator 跟 Part 沒有交互作用。 觀察交互作用圖，三條折線保持一致的趨勢，同樣這也表示 Operator 跟 Part 沒有交互作用。</p>
 <p>而在 Bad GRR，ANOVA 判斷 Operator 跟 Part 有交互作用。在圖中，三條折線有互相交叉的現象，其中 Operator B 在量測第一到第七個 part 時都顯得偏高，但在量測第八個時反而偏低，第九個 part 時就沒有這個現象，顯示 Operator B 在量測 part 時，其偏差會因 part 而不同，表示 Operator 跟 Part 有交互作用。</p>
 </div>
-<div id="measurement-by-parts" class="section level3">
-<h3>Measurement by parts</h3>
+<div id="measurement-by-parts" class="section level4">
+<h4>Measurement by parts</h4>
 <div class="plotx">
 <p style="color:red; font-weight:bold;">
 Good GRR

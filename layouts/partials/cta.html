@@ -1,26 +1,25 @@
 {{ if .Site.Params.cta.enable }}
 {{ "<!-- Call To Action Section Start -->" | safeHTML }}
 <section id="cta">
-    <div class="container">
-        <div class="row">
+    <div class="container" style="padding-top: 50px; padding-bottom: 30px;">
+        <div class="row ">
             <div class="col-md-12">
                 <div class="block">
-                    {{ with .Site.Params.cta.title }}<h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">{{ . | safeHTML}}</h2>{{ end }}
-                    {{ with .Site.Params.cta.content }}<h5 class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">{{ . | safeHTML }}</h5>{{ end }}
+                    {{ with .Site.Params.cta.title }}<h2 class="title wow fadeInDown" data-wow-delay=".1s" data-wow-duration="500ms">{{ . | safeHTML}}</h2>{{ end }}
+                    {{ with .Site.Params.cta.content }}<h5 class="wow fadeInDown" data-wow-delay=".1s" data-wow-duration="500ms">{{ . | safeHTML }}</h5>{{ end }}
                 </div>
             </div>
         </div>
 
         <div class="row address-details">
-            <div class="col-lg-3 col-sm-6"> </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="email wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".7s">
+            <div class="col-sm-6">
+                <div class="email wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".1s">
                     <a href="mailto:{{ .Site.Params.cta.mail }}" style= "color: #FFF"><i class="ion-ios-email-outline" ></i></a>
                     <p><a href="mailto:{{ .Site.Params.cta.mail }}" style= "color: #FFF">{{ .Site.Params.cta.mail }}</a></p>
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="phone wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".9s">
+            <div class="col-sm-6">
+                <div class="phone wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".1s">
                     <i class="ion-ios-telephone-outline"></i>
                     <p>{{ with .Site.Params.cta.phone }}{{ . }}{{ end }}</p>
                 </div>
