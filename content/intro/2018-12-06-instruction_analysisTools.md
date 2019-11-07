@@ -69,7 +69,7 @@ csv 檔的第一列為欄位名稱，數據從第二列開始。
 
 若數據中含有嚴重離群值，最好是檢查數據的正確性或者與檢定目的的相關性。貿然去除離群值是不科學的做法，但若不仔細檢查離群值的可靠性，則會增加型二的風險，亦即，可能平均值已有差異，但檢定結果卻無法判別出來。如數據分佈型態偏離常態分佈，試著用 log 或 box-cox 先轉換數據。
 
-### 如果數據型態不適合用 t-test，可使用非參數化的檢定， Wilcoxon signed rank test
+### 如果數據型態不適合用 t-test，可使用無母數 (nonparametric) 檢定， 例如 Wilcoxon signed rank test
 
 <img src="/images/intro/wilcox-result.png" alt="", style="width:800px">
 

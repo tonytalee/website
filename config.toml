@@ -68,7 +68,7 @@ paginate = 10
         enable  = true
         title   = ""
         content = "如果需要了解更多，或者需要問題解決與數據分析的協助，聯絡我。"
-        mail = "info@sightingdata.com"
+        mail = "ota.tony.lee@gmail.com"
         phone = "0972-268-529"
 
    
