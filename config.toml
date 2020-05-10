@@ -1,0 +1,45 @@
+baseURL = "/"
+languageCode = "en"
+DefaultContentLanguage = "en"
+title = "Sighting Data"
+summarylength = 10
+enableEmoji = true
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+# Enable Disqus
+#disqusShortname = ""
+
+# Google Analytics
+#googleAnalytics = "UA-123-45"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+title = "Sighting Data"
+author = "Tony Lee"
+description = "With Tony"
+
+favicon = "favicons/"
+customCss = []
+
+## Social links
+[[params.socialIcons]]
+icon = "fa-envelope"
+title = "e-mail"
+url = "mailto:ota.tony.lee@gmail.com"
+
+## Menu items
+
+[menu]
+
+  [[menu.main]]
+  name = "HOME"
+  identifier = "home"
+  weight = 100
+  url = "/"
+  
+  [[menu.main]]
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{- site.Language.Lang -}}">
+    {{- partial "head.html" . -}}
+    <body>
+        <div class="main">
+          {{ partial "navbar.html" . }}
+            <div class="autopagerize_page_element">
+                <div class="post animated fadeInDown">
+                    <div class="post-content">
+                      <div class="post-title">
+                        <h1>{{ .Title }}</h1>
+                        </div>
+
+                    {{ .Content }}
+                    </div>
+
+                    {{ if eq .Type "post"}}
+                    {{ if .Site.DisqusShortname -}}
+                    <div id="fb_comments_container">
+                      <h2>Comments</h2>
+                      {{ template "_internal/disqus.html" . }}
+                    </div>
+                    {{- end }}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        {{- partial "footer.html" . -}}
+    </body>
+
+</html>

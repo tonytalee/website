@@ -1,0 +1,51 @@
+enable  : true
+title   : 應用範例
+subtitle: 運用資料分析到問題解決及持續改善的實務
+content: >
+   
+demoItem :
+  - title: 建立數據分析與持續改善的整合能力
+    content: >
+        <a href= "/intro/why_and_how">WHY & HOW</a><br>
+        <a href= "/intro/analysis_frame1">數據分析架構</a>
+    
+  - title: GRR 分析
+    content: >
+        <b>Crossed GRR 分析介面</b>
+        <p>這個應用程式運用 ANOVA 分析 crossed GRR 的研究數據，輸出圖表並依據結果給予輔助說明，幫助使用者了解 GRR 研究的結果。</p>
+        <p><b>相關連結：</b></p>
+        <a href= "/post/grr_interpret">如何解讀 GRR 分析結果</a><br>
+        <a href= "/post/grr_baseline_application">GRR baseline 應用介紹</a>
+    link: http://shiny.sightingdata.com/shiny/grr
+    btnTxt: "GRR 分析工具"
+    inst: /intro/instruction_grr
+    
+  - title: 統計基礎工具
+    content: >
+      <b>這個應用程式幫助使用者正確的運用檢定來比較平均值及比例。</b>
+      <p>比較平均值及比例，是分析最常使用，也是最基礎的統計檢定。但是錯誤的運用檢定方法，會得到錯誤的結果，反而誤導了決策。例如，two-sample t-test 常用來比較兩組數據的平均。但要注意的是，t-test 假設兩組數據的分佈是近似常態，因此應用 t-test 時必須要確認數據分佈是否為常態。非常態分佈的數據，如果樣本數够大，依據中央極限定理，平均值的分佈會接近常態，在這種狀況下，也是可以使用 t-test。此外，離群值會降低判斷出平均值有差異的機率，因此檢驗數據中的離群值是否合理，也是做檢定的重要步驟。所以並不是拿到數據，就直接做 t-test，然後看 p-value 來決定平均值或比例有沒有差異，而是要仔細的檢視數據的型態，有無 outlier，數據是否有異常，再運用適合檢定方法。。</p>
+      <p>在這個應用程式中，我們將檢視離群值及常態分佈整合至比較平均值或比例的檢定過程中，加上圖表的視覺化輔助，幫助使用者正確的比較平均或比例的差異。讀者可以參應用說明，以自己的資料進行更完整的平均值或比例檢定。</p>
+      
+    link: http://shiny.sightingdata.com/shiny/analysisTools
+    btnTxt: 統計基礎工具
+    inst: /intro/instruction_analysisTools
+    
+  - title: SPC 分析
+    content: >
+      <b>在這個應用範例中，我們將 SPC 相關的資訊整合至同一個介面，讓使用者更輕鬆且完整的的監控管制項目及分析異常。</b>
+      <p>除了藉由管制圖呈現製程的穏定性之外，SPC 儀表板由總覧綜合指標的現況及其變化開始，再例出每一個製程管制項目的製程能指標，讓使用者可以輕鬆的檢視每個項目的製程能力及過去的變化。同時依據設定好的對相關因子做變異分析，讓使用者面對異常狀況時，可以迅速的依據相關因子的變化及差異，更正確的採取行動。</p>
+      <p><b>相關連結：</b></p>
+        <a href= "/post/control_chart_key_concepts">管制圖要有效的五個重要觀念</a><br>
+      
+    link:  http://shiny.sightingdata.com/shiny/SPC_demo
+    btnTxt: SPC 儀表板
+
+  - title : 產品良率分析
+    content: >
+      <b>在這個應用範例中，我們將產品良率分析分成短期(每日)及長期(每週)兩個介面，以因應良率管理兩個不同的需求：防堵異常良率發生、及持續改善良率。</b>
+      <p>檢視產品短期良率，重點在找出良率異常（過低或過高）的批次，分析原因，防堵異常良率持續發生。因此短期的良率分析介面要能夠幫助使用者回答或掌握下列問題：良率異常的批次是否在製程管制中就己掌握？問題是否己解決？良率異常產品會持續多久或多少個批次，是否能找出潛在(尚未發現)的低良率批次？</p>
+      <p>分析產品長期良率，重點在藉由較多的數據累積，分析出良率中比較細微的變化或差異。良率是否有變化（上升或下降）？製程管制是否可充分控制良率？機台之間是否有差異或變化（例如，某一機台逐漸老化所帶來的良率下降）？</p>
+      
+    link: http://shiny.sightingdata.com/shiny/Yield_demo
+    btnTxt: 產品良率儀表板
+        

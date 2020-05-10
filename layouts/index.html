@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<div class="about animated fadeInDown">
+  {{ range .Site.Data.demo.demoItem }}
+    <div class="block">
+        <h2>
+        {{ with .title }}<span>{{ . }}</span>{{ end }}
+        {{ if .link}}
+          <span><a href="{{ .link }}" class="btn">{{ .btnTxt }}</a></span>
+        {{ end }}
+        {{ with .inst }}<span><a href="{{ . }}" class="btn">使用說明</a></span>{{ end }}
+        </h2>
+        {{ with .content }}<p>{{ . | safeHTML }}</p>{{ end }}
+    </div>
+  {{ end }}
+</div>
+
+{{ end }}

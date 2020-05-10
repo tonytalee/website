@@ -1,0 +1,21 @@
+<div class="sidebar animated fadeInDown">
+    <div class="logo-title">
+      <div class="title">
+        <h3 title=""><a href="/">{{ .Site.Params.Title }}</a></h3>
+        <div class="description">
+          <h4>{{ .Site.Params.description }}</h4>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+        {{ range $item := .Site.Params.socialIcons }}
+        <h3><a href="{{ $item.url }}" rel="me" >
+          <i class="fa {{ $item.icon }}" aria-hidden="true" title="{{ $item.title }}"></i>
+        </a></h3>
+        {{ end }}
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; {{ .Site.Params.author }} {{ now.Format "2006"}} </div>
+      </div>
+    </div>
+</div>

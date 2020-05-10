@@ -1,0 +1,138 @@
+
+
+#TOC {
+    list-style: none;
+    position: fixed;
+    left: 0;
+    top: 50;
+    width: 400px;
+    height: 100%;
+    overflow:auto;
+    color: steelblue;
+    font-size: 12px;
+}
+    
+body {
+    max-width: 800px;
+    margin-top: 60px;
+    margin-left:210px;
+    margin-bottom: 100px;
+    padding: 1em;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    visibility: hidden;
+    page-break-before: always;
+}
+
+table, th, td{
+     border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    padding-left: 8px;
+}
+th {
+    border-bottom: 1px solid #CCCCCC;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+
+/************/
+#headerx {
+    margin: 10px 10px 10px 25px;
+    font-size: 12px;
+    color: gray;
+    font-family: 'Times New Roman', serif;
+}
+
+#description {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+}
+.section {
+    margin-top: 50px;
+    font-family: 'Open Sans','Avenir Next', Arial, sans-serif;
+}
+
+.listx {
+    text-indent: -2em;
+    margin-left: 4em;
+}
+
+h1.title {
+    font-family: 'American Typewriter', 'Times New Roman', serif
+}
+
+h2 {
+    background-color: aliceblue;
+    padding: 10px 10px 10px 30px;
+    font-family: 'Times New Roman', serif;
+}
+
+ul li {
+    margin: 10px;
+}
+
+.plotx {
+    border-style: solid;
+    border-color: gray;
+    width: 800px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.serif {
+    font-family: 'Times New Roman', serif;
+}

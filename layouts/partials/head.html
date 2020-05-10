@@ -1,0 +1,31 @@
+<head>
+    <title> {{.Site.Params.author}} | {{.Title}} </title>
+    <meta charset="utf-8">
+    {{- hugo.Generator -}}
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <link rel="stylesheet" href="{{ `css/style.css` | absURL }}" type="text/css">
+    {{ range .Site.Params.customCss -}}
+    <link rel="stylesheet" href="{{ . | absURL }}" type="text/css">
+    {{- end }}
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <base href="{{ .Site.BaseURL }}">
+
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    {{ "<!-- Google fonts -->" | safeHTML }}
+    <link rel="stylesheet" href="{{ "https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700&amp;subset=chinese-traditional" | absURL }}">
+    <link rel="stylesheet" href="{{ "https://fonts.googleapis.com/css?family=Neuton" | absURL }}">
+    <link rel="stylesheet" href="{{ "https://fonts.googleapis.com/css?family=Noto+Serif+TC:400,700&amp;subset=chinese-traditional" | absURL }}">
+    <link rel="stylesheet" href="{{ "https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" | absURL }}">
+
+
+    {{ "<!-- Ionicons Fonts Css -->" | safeHTML }}
+    <link rel="stylesheet" href="{{ "plugins/ionicons/ionicons.min.css" | absURL }}">
+
+    <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+
+</head>
