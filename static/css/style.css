@@ -265,7 +265,7 @@ a:hover, a:active {
 .post {
   background-color: #FFF;
   max-width: 800px;
-  margin: 100px auto 60px auto;
+  margin: 100px 15px 60px 15px;
 }
 h1 {
   font-size: 36px;
@@ -751,7 +751,7 @@ a.btn {
 
 /*--*/
 .block {
-  padding: 20px 5px 20px 5px;
+  padding: 20px 15px 20px 15px;
 }
 .block h2 {
   margin-top: 30px;
