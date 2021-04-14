@@ -1,0 +1,122 @@
+---
+title: "建立與應用管制圖"
+author: "Tony Lee"
+date: 2021-03-23
+slug: build_and_operate_control_chart
+categories: ["SPC"]
+tags: ["process control", "SPC"]
+output:
+  html_document:
+    self_contained: yes
+---
+
+
+
+<p>在製程的決定性因子都受到控制之後，製程結果的變異就只剩下隨機性的變異，而且此隨機變異的分佈不隨時間變化，我們稱這個狀態為穩定狀態。</p>
+<blockquote>
+<p>穩定製程：製程的變異分佈不隨時間而變。若以平均值及標準差來代表製程隨機變異的分佈函數，則其平均值跟標準差保持不變。</p>
+</blockquote>
+<p><img src="./images/build_and operate_control_chart/process_status.png" alt="sample mean histogram" style="width:800px;"></p>
+<p>在生產中，很多因素都會造成製程脫離原本的穩定狀態，這可能是變成了不穩定狀態(無固定的平均值或標準差)或者進入另一個不同於原先的穩定狀態(平均值或標準差變到另一個值)；這兩者狀況都稱之為製程失控 (out of control)。管制圖的目的就是在生產中能即時發現製程狀態的改變，以及早進行矯正措施。</p>
+<blockquote>
+<p>管制圖是在偵測製程是否有異常發生- 平均值或標準差是否有變化，而不是在判斷產品是否在規格內。</p>
+</blockquote>
+<p>管制圖以管制指標的數值性質可分為計數型管制圖跟計量型管制圖。這兩種類型的管制圖假設不同的機率模型，計數型管制圖假設管制指標的隨機分佈是二項式分佈或者是 Poisson 分佈；計量型管制圖是假設管制指標的隨機特性是常態分佈。本文以 <span class="math inline">\(\bar x - s\)</span> (樣本平均值-樣本標準差)管制圖為例說明如何建立管制圖以及如何運用它。</p>
+<div id="管制圖的運作原理" class="section level2">
+<h2>管制圖的運作原理</h2>
+<p><span class="math inline">\(\bar x -s\)</span> 管制圖包含了兩項管制圖，樣本平圴值管制跟樣本標準差管制。我們先以模擬來了解在穩定製程中抽樣的樣本平均值跟標準差的分佈，進而理解管制圖的運作原理。</p>
+<p>假設一穩定製程的母體分佈為平均值 100，標準差 3 的常態分佈。對此製程抽樣，每次抽樣的樣本數為五個，再計算這五個樣本的平均值及標準差，稱之為這筆抽樣的樣本平均值跟樣本標準差。若對此穩定製程連續抽樣 1000 次，則會有 1000 筆的樣本平均值跟 1000 筆的樣本標準差。</p>
+<div id="樣本平均值的分佈" class="section level4">
+<h4>樣本平均值的分佈</h4>
+<p>把這 1000 筆的樣本平均做直方圖：</p>
+<p><img src="./images/build_and operate_control_chart/sample_mean_histogram.png" alt="sample mean histogram" style="width:600px;"></p>
+<p>樣本平均值的分佈非常近似常態分佈且分佈範圍較窄(即標準差較小)。理論上，若母體分佈為 <span class="math inline">\(N(\mu_0, \sigma_0)\)</span> 的常態分佈，則從其中抽樣的樣本平均值分佈會呈 <span class="math inline">\(N(\mu_0, \sigma_0 / \sqrt n)\)</span> 的常態分佈，<span class="math inline">\(n\)</span> 為每次抽樣的樣本數；其中心值等於原母體的中心值 (即平均值 <span class="math inline">\(\mu_0\)</span>)，標準差為原母體標準差的<span class="math inline">\(1/\sqrt n\)</span>。也就是說，樣本平均值的分佈函數為 <span class="math inline">\(N(\mu_0, \sigma_0 /\sqrt n)\)</span>。按照常態分佈的特性，99.7% 的抽樣樣本平均值會落在<span class="math inline">\(\mu_0 \pm 3 \times \sigma_0 /\sqrt n\)</span>之間。管制圖利用這個特性來判斷新的樣本平均值是否不同於原母體的平均值。以上例而言，<span class="math inline">\(\mu_0 \pm 3 \times \sigma_0 /\sqrt n\)</span> 約在 96 至 104 之間，新抽樣的樣本均值若落在這個範圍之內則判定製程的平均值未改變。但要注意的是，正負三個標準差的區間是假設保有 99.7% 的信心度，意思是有 0.3% 的機率是為假警報的誤判。</p>
+</div>
+<div id="樣本標準差的分佈" class="section level4">
+<h4>樣本標準差的分佈</h4>
+<p>同樣的，把 1000 筆的樣本標準差做直方圖：</p>
+<p><img src="./images/build_and operate_control_chart/sample_stDev_histogram.png" alt="sample standard deviation histogram" style="width:600px;"></p>
+<p>樣本標準差的分佈可看得出來右側有較長的尾巴，並非是常態分佈。雖然樣本標準差本質上不是常態分佈，但大部分的應用會把它近似成常態分佈以運用常態分佈的特性來做判斷。樣本標準差的常態分佈中心值 (<span class="math inline">\(\mu\)</span>) 為<span class="math inline">\(c_4 \sigma_0\)</span>，標準差 (<span class="math inline">\(\sigma\)</span>)為<span class="math inline">\(\sigma_0 \sqrt {1-c_4^2}\)</span>。其中 <span class="math inline">\(c_4\)</span> 為修正樣本標準差與真正標準差估值的偏差參數，跟樣本數相關；當樣本數為 5 時，<span class="math inline">\(c_4\)</span> 為 0.94， 樣本數越大，<span class="math inline">\(c_4\)</span> 就越趨近於一。</p>
+<p>把樣本標準差的分佈似近為常態後，我們就能以 <span class="math inline">\(\mu \pm 3 \sigma\)</span> 佔 99.7% 的可能性來判新抽樣的斷樣本標準差是否跟原本的樣本標不同。以所舉的例子而言，從原製程母體中抽樣的樣本標準差 99.7% 會落在 0 至 5.95 之間 (按計算是在 -0.25 至 5.95 之間，但標準差最小是零)。新抽樣的樣本標準差若也在這個區間內則判定製程變異分佈的標準差沒有變化。</p>
+<blockquote>
+<p>若穩定製程的變異分佈為常態且已知其分佈函數的參數- 平圴值及標準差，我們就可以推算的樣本平均值跟樣本標準差的常態分佈函數；並分別以此兩個常態分佈的特性做為管制製程變異的方法。</p>
+</blockquote>
+</div>
+</div>
+<div id="管制圖建立的流程" class="section level2">
+<h2>管制圖建立的流程</h2>
+<p>以下說明如何建立及應用管制圖，分為三個階段：</p>
+<ol style="list-style-type: decimal">
+<li>建立製程模型：並以抽樣研究推估製程常態分佈函數的參數- 母體平均值及母體標準差。</li>
+<li>監控製程：以即時的抽樣來取得製程現況的數據，並以製程模型來推論這組新數據是否不同於以往。</li>
+<li>檢視與修正模型：隨著數據量增加，或製程變更後，重新檢視及修正製程模型。</li>
+</ol>
+<p><img src="./images/build_and operate_control_chart/control_chart_flow.png" alt="control chart flow" style="width:600px;"></p>
+<div id="階段一建立製程模型" class="section level3">
+<h3>階段一、建立製程模型</h3>
+<p>分為四個步驟：</p>
+<ol style="list-style-type: decimal">
+<li>建立抽樣計劃。</li>
+<li>抽取 25 至 50 筆的樣本，計算樣本平均值及標準差。</li>
+<li>建立穩定製程的變異分佈模型。</li>
+<li>計算管制圖中心線及管制界限。</li>
+</ol>
+<div id="建立抽樣計劃" class="section level4">
+<h4>1. 建立抽樣計劃</h4>
+<p>實務上，我們僅能透過抽樣的數據來了解製程的的變異分佈狀態。</p>
+<p>抽樣計劃要決定抽樣的方法和每筆抽樣的樣本數。抽樣方法要能確保樣本具有母體的代表性(準確性)；樣本數決定將來製程變異的偵測能力(鑑別力)。抽樣的準確度跟鑑別力通常意味著更高的抽樣成本，好的抽樣計劃必須要在這三者間取得平衡。</p>
+</div>
+<div id="抽取-25-至-50-筆的樣本計算樣本平均值及標準差" class="section level4">
+<h4>2. 抽取 25 至 50 筆的樣本，計算樣本平均值及標準差</h4>
+<p>在第一階段要做大樣本的抽樣以取得足夠的數據建立製程模型的參數。經驗上，大部分的製程在 25 至。50 筆之間就足夠，一般會選擇 30 筆，每筆的樣本數則按抽樣計劃的規劃。以下的模擬例子假設每筆抽樣的樣本數為五，連續抽樣 30 筆。我們把每筆抽樣的樣本稱之為子群 (subgroup)，每一筆子群再計算子群的樣本平均值跟樣本標準差；樣本平均值跟樣本標準差都是一種樣本統計量 (sample statistic)。模擬抽樣的結果如下表：
+<img src="./images/build_and operate_control_chart/sample_30_table.png" alt="table of sampling statistics" style="width:600px;"></p>
+</div>
+<div id="建立製程隨機模型" class="section level4">
+<h4>3. 建立製程隨機模型</h4>
+<p>由大樣本的抽樣得到樣本總平均值 (<span class="math inline">\(\bar {\bar x}\)</span>)及樣本平均值 (<span class="math inline">\(\bar s\)</span>) 這兩統計量，再由這兩個統計量估計母體的平均值 (<span class="math inline">\(\hat \mu_0\)</span>) 和母體標準差 ( <span class="math inline">\(\hat \sigma_0\)</span>)；由此建立製程隨機變異的常態分佈模型。</p>
+<p><img src="./images/build_and operate_control_chart/population_estimation.png" alt="table of sampling statistics" style="width:600px;"></p>
+</div>
+<div id="計算-bar-x-管制圖的中心線及管制界限" class="section level4">
+<h4>4.1 計算 <span class="math inline">\(\bar x\)</span> 管制圖的中心線及管制界限</h4>
+<p><span class="math inline">\(\bar x\)</span> 管制圖在判斷每次抽樣的樣本平均值是否偏離製程基線的平均值(也就是以大樣本抽樣研究時得到製程母體平均值估計，<span class="math inline">\(\bar {\bar x}\)</span>)</p>
+<p>以常態分佈來模擬樣本平均值的分佈，若製程保持穩定，則樣本平均值的分佈如下圖所示：</p>
+<p><img src="./images/build_and operate_control_chart/xbar_control_limits.png" alt="table of sampling statistics" style="width:600px;"></p>
+<p>管制圖應用上，一般會採用 99.7% 的信心度要求，也就是用平均值加減三個標準差的區間做為判斷製程平均值是否偏離的界限。在這個區間內，我們把量測到的製程變異視為隨機性，即製程保持穩定狀態。</p>
+<p>延續上述的例子，<span class="math inline">\(\bar {\bar x}\)</span> = 99.85，<span class="math inline">\(\bar s\)</span> = 2.82， 當 n = 5，<span class="math inline">\(c_4\)</span> ＝ 0.94。管制界限及中心線計算如下：</p>
+<ul>
+<li><p><span class="math inline">\(\bar x\)</span> 管制上限： <span class="math inline">\(\bar {\bar x} + 3 \frac {\bar s} {c_4 \sqrt n} = 99.85 + 3 \times \frac {2.82}{0.94 \times \sqrt 5}= 103.87\)</span>。</p></li>
+<li><p><span class="math inline">\(\bar x\)</span> 管制下限： <span class="math inline">\(\bar {\bar x} - 3 \frac {\bar s} {c_4 \sqrt n} = 99.85 - 3 \times \frac {2.82}{0.94 \times \sqrt 5}= 95.83\)</span>。</p></li>
+<li><p><span class="math inline">\(\bar x\)</span> 中心線：<span class="math inline">\(\bar {\bar x} = 99.85\)</span>。</p></li>
+</ul>
+</div>
+<div id="計算-s-管制圖的中心線及管制界限" class="section level4">
+<h4>4.2 計算 s 管制圖的中心線及管制界限</h4>
+<p>s 管制圖的功能是判斷抽樣的樣本標準差是否不同於製程基線的標準差。s 管制圖的區間判斷並不採用複雜的統計理論，而是把樣本標準差 (s) 的分佈近似為常態分佈；所以如同 <span class="math inline">\(\bar x\)</span> 管制圖，就可以利用的常態分佈的特性來判斷樣本標準差是否已產生變化。</p>
+<p>樣本標準差的分佈及其管制界限的圖示如下：</p>
+<p><img src="./images/build_and operate_control_chart/s_control_limits.png" alt="table of sampling statistics" style="width:600px;"></p>
+<p>再延續上述例子，s 管制圖的管制界限及中心線計算如下：</p>
+<ul>
+<li><p><span class="math inline">\(s\)</span> 管制上限：<span class="math inline">\(\bar s + 3 \frac {\bar s}{c_4} \sqrt {1-c_4^2)} = 2.82 + 3 \times \frac {2.82}{0.94} \times \sqrt {1-0.94^2} = 5.89\)</span>。</p></li>
+<li><p><span class="math inline">\(s\)</span> 管制下限：<span class="math inline">\(\bar s - 3 \frac {\bar s}{c_4} \sqrt {1-c_4^2)} = 2.82 - 3 \times \frac {2.82}{0.94} \times \sqrt {1-0.94^2} = -0.25\)</span>，但因 s 不應小於零，所以把 s 管制下限修正為 0。</p></li>
+<li><p><span class="math inline">\(s\)</span> 中心線：<span class="math inline">\(\bar s = 2.82\)</span></p></li>
+</ul>
+</div>
+</div>
+<div id="階段二監控製程" class="section level3">
+<h3>階段二、監控製程</h3>
+<p>初步完成製程的隨機變異模型跟 <span class="math inline">\(\bar x -s\)</span> 的管制界限之後，我們就可利用這兩張管制圖分為監控製程樣本平均值跟樣本標準差是否有異常。</p>
+<p>就上述的例子而言，樣本平均值如果落在 95.83 跟 103.87 之間，我們就判平均值正常，若超出則稱為失控 (out-of-control, OCC)。</p>
+<p><img src="./images/build_and operate_control_chart/xbar_control_limits_1.png" alt="table of sampling statistics" style="width:500px;"></p>
+<p>用同樣的方法來監控標準差的變異，若抽樣的樣本標準差落在 5.89 以下，則標判斷標準未改變，超出則判斷為標準差不同於原製程基線的標準差。</p>
+<p><img src="./images/build_and operate_control_chart/s_control_limits_1.png" alt="table of sampling statistics" style="width:500px;"></p>
+</div>
+<div id="階段三檢視與修正模型" class="section level3">
+<h3>階段三、檢視與修正模型</h3>
+<p>初期建立的製程模型有可能並非是最精確的模型。在持續應用管制圖監控製程中，我們也應該要定期的重新檢視更大量的數據，以再一次的分析製程變異的來源，重新校正出更精確的模型參數。此外定期的檢視製程也包含檢查製程能力是否符合產品製造及新產品開發的需求。</p>
+<p>在持續校正模型時，要注意不要每收到一筆數據就校正模型參數，或者頻䌓的校正。因為有些製程的細微變化需要較長時間的累積才能觀察的到，過於頻䌓的校正會將這些不夠顯著的特殊變異當成隨機變異算入製程的隨機模型中，這會錯誤的逐次擴大管制界限，導致管制圖降低偵測特殊變異的能力。</p>
+<p>另外一個需要重新校正模型參數的時機為製程變更之後。製程變更有可能是有意的調整製程的平均值或改善製程的變異，也有可能是無意間影響到製程的結果，因此每次製程變更之後，再度的追踨檢視製程數據，校正製程模型是不能疏忽的事情。</p>
+<hr class="hr-end">
+<p>管制圖的基本原理是一系列的動態抽樣，以統計判斷製程是否有非隨機的特殊變異產生。隨機變異是製程的重要觀念，這是反應物理世界存在不確定現象。區分製程變異為隨機跟非隨機的特殊變異是製程管制的重要工作；管制圖是達到這個目的簡單有效的工具。</p>
+<p>從更大視野來看，管制圖只是製程管制的工具之一，而且單一管制圖也僅是製造流程中的一個點。工程師們應該從製程流程 (process flow)、失效模式及效應分析 (FMEA) 及管制計劃 (control plan) 這三大文件工具來規劃管制圖的應用時機及方法；以讓所有製程管制方法總合起來得到最大的整體效益，而非各別的管制圖追求各自的最大績效。</p>
+</div>
+</div>
