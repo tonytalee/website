@@ -8,7 +8,7 @@ liveLink: https://www.sightingdata.com
 
 **建立數據分析系統的方法依企業需求及資源有所不同，這裡提出一個運用最小資源但可以有效支援持續改善及問題解決的數據分析架構。**
 
-![數據分析架構](/images/post/data_analysis_frame_CIP.png#width_65)
+![數據分析架構](/images/post/data_analysis_frame_CIP.png)
 
 上面的概念圖中，左側列出問題解決或持續改善的關鍵步驟，這些步驟中會包含數個重要任務；右側是支援這些任務的數據分析功能。說明如下：
 
