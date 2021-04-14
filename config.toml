@@ -8,10 +8,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 # Enable Disqus
 #disqusShortname = ""
-
-# Google Analytics
-#googleAnalytics = "UA-123-45"
-
+  
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -36,7 +33,7 @@ url = "mailto:ota.tony.lee@gmail.com"
 [menu]
 
   [[menu.main]]
-  name = "HOME"
+  name = "首頁"
   identifier = "home"
   weight = 100
   url = "/"

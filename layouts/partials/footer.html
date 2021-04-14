@@ -3,5 +3,17 @@
 <script type="text/javascript" src="{{ `js/jquery.min.js` | absURL }}"></script>
 <script type="text/javascript" src="{{ `js/jquery-migrate.min.js` | absURL }}"></script>
 <script type="text/javascript" src="{{ `js/jquery-appear.min.js` | absURL }}"></script>
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").style.top = "-100px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+</script>
 {{- template "_internal/google_analytics_async.html" . -}}
 </html>

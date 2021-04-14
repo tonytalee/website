@@ -5,11 +5,6 @@ date: 2019-02-18
 slug: control_chart_key_concepts
 categories: ["SPC"]
 tags: ["control chart"]
-output:
-  html_document:
-    css: markdown01.css
-    self_contained: yes
-
 ---
 
 大部分的企業會運用 SPC 來管理及改善製程，管制圖是 SPC 儲多工具中最常使用的一個。正確的使用管制圖，企業可以有效的預防製程缺陷、減少製程變異、以及避免不必要製程調整，因而改善整體的生產力和產品品質。
@@ -84,7 +79,7 @@ output:
 
 至於如何區分這三種不同的製程數據型態，我會在另外一篇文章中探討。
 
-<hr class= "hr-style1">
+<hr class= "hr-end">
 
 管制圖如果運用得當，可以用較低的成本但有效的幫助企業提升製程的績效，製程的績效最終會反應至企業的競爭力。即使在人工智慧及工業4.0的浪潮上，企業也必須檢視公司內部是否已充分的運用包含管制圖在內的各種統計管制的工具，並且產生效果。
 

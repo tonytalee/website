@@ -1,14 +1,14 @@
 ---
-title: "數據分析架構"
+title: "建立支援持續改善的數據分析架構"
 type: intro
 date: 2018-12-03T16:54:54+06:00
-category: ["intro"]
+category: ["data analysis", "continious improvement"]
 liveLink: https://www.sightingdata.com
 ---
 
-**建立數據分析系統的方法依企業需求及資源有所不同，在這裡我們聚焦在用最少的資源建立一個可以有效支援持續改善及問題解決的數據分析架構。**
+**建立數據分析系統的方法依企業需求及資源有所不同，這裡提出一個運用最小資源但可以有效支援持續改善及問題解決的數據分析架構。**
 
-![數據分析架構](/images/intro/dataAnalysisImprovement.png#width_60)
+![數據分析架構](/images/post/data_analysis_frame_CIP.png#width_65)
 
 上面的概念圖中，左側列出問題解決或持續改善的關鍵步驟，這些步驟中會包含數個重要任務；右側是支援這些任務的數據分析功能。說明如下：
 

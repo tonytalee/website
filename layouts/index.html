@@ -1,16 +1,27 @@
 {{ define "main" }}
 
-<div class="about animated fadeInDown">
+<div class="home animated fadeInDown">
   {{ range .Site.Data.demo.demoItem }}
     <div class="block">
-        <h2>
-        {{ with .title }}<span>{{ . }}</span>{{ end }}
-        {{ if .link}}
-          <span><a href="{{ .link }}" class="btn">{{ .btnTxt }}</a></span>
-        {{ end }}
-        {{ with .inst }}<span><a href="{{ . }}" class="btn">使用說明</a></span>{{ end }}
-        </h2>
-        {{ with .content }}<p>{{ . | safeHTML }}</p>{{ end }}
+        <h2> {{ with .block }}<span>{{ . }}</span>{{ end }}</h2>
+        {{ range .content}}
+            <div class="sub-block">
+                <a href="{{ .link }}">
+                    <span>
+                        <h3>
+                            {{ .title }}
+                            {{ if .icon }}<i class="fa {{ .icon }}" aria-hidden="true"></i>{{ end }}
+                        </h3>
+                    </span>
+                    {{ with .text }}{{ . | safeHTML }}{{ end }}
+                </a>
+               <br>
+                {{ if .tool }}
+                    <a href="{{ .tool }}" class="btn">應用工具連結</a>
+                {{ end }}
+            </div>
+        {{ end}}
+
     </div>
   {{ end }}
 </div>
