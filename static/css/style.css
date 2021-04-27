@@ -12,6 +12,7 @@ body {
     width: 100%;
     margin: 0 auto 30px auto;
     background-color: #fff;
+    line-height: 1.8;
 }
 
 a.anchor-section {
@@ -59,7 +60,6 @@ li {
 }
 
 p {
-    line-height: 1.5em;
     font-weight: 400;
     margin-top: 0.5em;
     margin-bottom: 1em;

@@ -10,6 +10,9 @@ demoItem:
           - title: 解決問題的關鍵步驟
             link: /post/problem-solving-key-steps
             text: 謹守解決問題的三個關鍵步驟、六個階段，結構性的鍛練解決問題的思維能力...
+          - title: 製造瘋AI前，先瞭解應用模型的風險及效能評估
+            link: /post/risk-performance-evaluation-confusion-matrix
+            text: 不管預測或判斷的模型是不是運用 AI 技術，預測或判斷的結果不會是百分之百正確的，使用模型務必也要瞭解如何評估模型的效能及其誤差的風險，以正確的應用模型和管控風險...
     - block: 統計基本應用
       content:
           - title: 基本統計工具
