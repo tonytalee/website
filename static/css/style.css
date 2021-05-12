@@ -34,13 +34,13 @@ h3 {
     font-size: 25px;
     font-weight: 500;
     margin-top: 2em;
-    margin-bottom: 0em;
+    margin-bottom: 0;
 }
 h4 {
     font-size: 20px;
     font-weight: 500;
     margin-top: 1.5em;
-    margin-bottom: 0em;
+    margin-bottom: 0;
 }
 
 
@@ -50,7 +50,7 @@ blockquote p {
     padding: 20px 20px;
 }
 
-div.sub-block {
+.sub-block {
     padding: 5px 5px 5px 15px ;
     margin-top: 5px;
 }
@@ -69,7 +69,7 @@ a {
     text-decoration: none;
 }
 
-hr.hr-end {
+.hr-end {
     border: 0;
     height: 1px;
     background: #333;
@@ -282,7 +282,7 @@ a:hover, a:active {
   padding-top: 240px;
 }
 .sidebar .logo-title .description {
-  font-size: 18px;
+  font-size: 14px;
   color: #273F4B;
 }
 .sidebar .logo-title .logo {
@@ -329,6 +329,10 @@ a:hover, a:active {
     font-size: 30px;
 }
 
+.sidebar .social-links h3 {
+  margin-top: 0;
+  margin-block-start: 0;
+}
 .post {
   background-color: #FFF;
   max-width: 800px;

@@ -10,6 +10,9 @@ demoItem:
           - title: 解決問題的關鍵步驟
             link: /post/problem-solving-key-steps
             text: 謹守解決問題的三個關鍵步驟、六個階段，結構性的鍛練解決問題的思維能力...
+          - title:  製造瘋AI前，先打穩製造的根基
+            link: /post/build_manufacturing_foundation
+            text: 拋開 AI 定義模糊的爭議不談，這些普遍被談及但莫明被稱之為 AI 輔助製造的技術若應用得當，的確可以大幅的提升製造能力。但是這些技術是要建構在穩固的製造基礎能力上，才能發揮它們該有的加乘效果，真正產生投資技術的價值...
           - title: 製造瘋AI前，先瞭解應用模型的風險及效能評估
             link: /post/risk-performance-evaluation-confusion-matrix
             text: 不管預測或判斷的模型是不是運用 AI 技術，預測或判斷的結果不會是百分之百正確的，使用模型務必也要瞭解如何評估模型的效能及其誤差的風險，以正確的應用模型和管控風險...

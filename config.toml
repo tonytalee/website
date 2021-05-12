@@ -4,7 +4,7 @@ DefaultContentLanguage = "en"
 title = "Sighting Data"
 summarylength = 10
 enableEmoji = true
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 
 # Enable Disqus
 #disqusShortname = ""
@@ -18,15 +18,16 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 title = "Sighting Data"
 author = "Tony Lee"
 description = "With Tony"
+email = "ota.tony.lee@gmail.com"
 
 favicon = "favicons/"
 customCss = []
 
 ## Social links
 [[params.socialIcons]]
-icon = "fa-envelope"
-title = "e-mail"
-url = "mailto:ota.tony.lee@gmail.com"
+icon = "fas fa-linkedin-square"
+title = "Linkedin"
+url = "https://linkedin.com/in/tony-ta-lee"
 
 ## Menu items
 
