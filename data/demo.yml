@@ -1,49 +1,55 @@
 demoItem:
-    - block: 數據分析與持續改善
-      content:
-          - title: 以數據分析驅動持續改善
-            link: /post/data_driven_continuous_improvement
-            text: 持續改善是企業競爭力的基石，而數據分析是有效確保持續改善能達到最大效能的關鍵能力和思維方法...
-          - title: 建立支援持續改善的數據分析架構
-            link: /post/analysis_frame1
-            text: 一個極簡架構用以支援持續改善的數據分析...
-          - title: 解決問題的關鍵步驟
-            link: /post/problem-solving-key-steps
-            text: 謹守解決問題的三個關鍵步驟、六個階段，結構性的鍛練解決問題的思維能力...
-          - title:  製造瘋AI前，先打穩製造的根基
-            link: /post/build_manufacturing_foundation
-            text: 拋開 AI 定義模糊的爭議不談，這些普遍被談及但莫明被稱之為 AI 輔助製造的技術若應用得當，的確可以大幅的提升製造能力。但是這些技術是要建構在穩固的製造基礎能力上，才能發揮它們該有的加乘效果，真正產生投資技術的價值...
-          - title: 製造瘋AI前，先瞭解應用模型的風險及效能評估
-            link: /post/risk-performance-evaluation-confusion-matrix
-            text: 不管預測或判斷的模型是不是運用 AI 技術，預測或判斷的結果不會是百分之百正確的，使用模型務必也要瞭解如何評估模型的效能及其誤差的風險，以正確的應用模型和管控風險...
-    - block: 統計基本應用
-      content:
-          - title: 基本統計工具
-            icon: fa-wrench
-            link: /post/instruction_analysistools
-            text: 比較平均值及比例，是分析最常使用，也是最基礎的統計檢定。但是錯誤的運用檢定方法，會得到錯誤的結果，反而誤導了決策。這個應用程式幫助使用者正確的運用檢定來比較平均值及比例。參考使用說明...
-            tool: http://shiny.sightingdata.com/shiny/analysisTools
-    - block: GRR 分析
-      content:
-          - title: GRR分析應用工具
-            icon: fa-wrench
-            link: /post/instruction_grr
-            text: 這個應用程式運用 ANOVA 分析 crossed GRR 的研究數據，輸出圖表並依據結果給輔助說明，幫助使用者了解 GRR 研究的結果。參考使用說明...
-            tool: http://shiny.sightingdata.com/shiny/grr
-          - title: 如何解讀 GRR 分析結果
-            link: /post/grr_interpret
-            text: 分析 GRR不能只是看 GRR% 小於 10 或 大於 30。能正確的分析 GRR 的各種數據才能正確的評估量具的能力，尋找改善量測能力的可能方案。這篇文章以比較兩個 GRR 結果來說明如何解讀 GRR 的數據分析...
-          - title: GRR baseline 應用介紹
-            link: /post/grr_baseline_application
-            text: 量測系統都會定期的做 GRR 測試以確保量測的可靠度。這些 GRR 測試的數據除了驗證測系統的可靠度外，也應該收集起來建立量測系統的baseline。建立量測系統的 baseline 可提供兩個好處...
-    - block: 製程管制
-      content:
-          - title: 製程與製程管制
-            link: /post/process_control_concept
-            text: 製程是什麼？製程管制在管制什麼？要如何有系統的做製程管制...
-          - title: 建立及應用管制圖
-            link: /post/build_and_operate_control_chart
-            text: 以 x&#772-s 管制圖為例，介紹如何建立和運用管制圖的正確方法和需要了解的統計觀念...
-          - title: 管制圖要有效的五個重要觀念
-            link: /post/control_chart_key_concepts
-            text: 落實管制圖的五個重要觀念，不要讓管制圖流於空洞的品質口號或品質稽核的樣版...
+  - block: 數據分析與持續改善
+    content:
+      - title: 養成數據智能，為什麼？如何做？
+        link: /post/data-intelligence-why-and-how
+        text: 數據智能是將數據轉化為價值的能力。數據智能在挖掘問題或機會、解決問題及促進理性決策等企業經營基礎層面提供無可取待的價值...
+      - title: 以數據分析驅動持續改善
+        link: /post/data_driven_continuous_improvement
+        text: 持續改善是企業競爭力的基石，而數據分析是有效確保持續改善能達到最大效能的關鍵能力和思維方法...
+      - title: 建立支援持續改善的數據分析架構
+        link: /post/analysis_frame1
+        text: 一個極簡架構用以支援持續改善的數據分析...
+      - title: 解決問題的關鍵步驟
+        link: /post/problem-solving-key-steps
+        text: 謹守解決問題的三個關鍵步驟、六個階段，結構性的鍛練解決問題的思維能力...
+      - title: 製造瘋AI前，先打穩製造的根基
+        link: /post/build_manufacturing_foundation
+        text: 拋開 AI 定義模糊的爭議不談，這些普遍被談及但莫明被稱之為 AI 輔助製造的技術若應用得當，的確可以大幅的提升製造能力。但是這些技術是要建構在穩固的製造基礎能力上，才能發揮它們該有的加乘效果，真正產生投資技術的價值...
+      - title: 製造瘋AI前，先瞭解應用模型的風險及效能評估
+        link: /post/risk-performance-evaluation-confusion-matrix
+        text: 不管預測或判斷的模型是不是運用 AI 技術，預測或判斷的結果不會是百分之百正確的，使用模型務必也要瞭解如何評估模型的效能及其誤差的風險，以正確的應用模型和管控風險...
+  
+    
+  - block: 統計基本應用
+    content:
+    - title: 基本統計工具
+      icon: fa-wrench
+      link: /post/instruction_analysistools
+      text: 比較平均值及比例，是分析最常使用，也是最基礎的統計檢定。但是錯誤的運用檢定方法，會得到錯誤的結果，反而誤導了決策。這個應用程式幫助使用者正確的運用檢定來比較平均值及比例。參考使用說明...
+      tool: http://shiny.sightingdata.com/shiny/analysisTools
+  - block: GRR 分析
+    content:
+    - title: GRR分析應用工具
+      icon: fa-wrench
+      link: /post/instruction_grr
+      text: 這個應用程式運用 ANOVA 分析 crossed GRR 的研究數據，輸出圖表並依據結果給輔助說明，幫助使用者了解 GRR 研究的結果。參考使用說明...
+      tool: http://shiny.sightingdata.com/shiny/grr
+    - title: 如何解讀 GRR 分析結果
+      link: /post/grr_interpret
+      text: 分析 GRR不能只是看 GRR% 小於 10 或 大於 30。能正確的分析 GRR 的各種數據才能正確的評估量具的能力，尋找改善量測能力的可能方案。這篇文章以比較兩個 GRR 結果來說明如何解讀 GRR 的數據分析...
+    - title: GRR baseline 應用介紹
+      link: /post/grr_baseline_application
+      text: 量測系統都會定期的做 GRR 測試以確保量測的可靠度。這些 GRR 測試的數據除了驗證測系統的可靠度外，也應該收集起來建立量測系統的baseline。建立量測系統的 baseline 可提供兩個好處...6
+  - block: 製程管制
+    content:
+    - title: 製程與製程管制
+      link: /post/process_control_concept
+      text: 製程是什麼？製程管制在管制什麼？要如何有系統的做製程管制...
+    - title: 建立及應用管制圖
+      ink: /post/build_and_operate_control_chart
+      text: 以 x&#772-s 管制圖為例，介紹如何建立和運用管制圖的正確方法和需要了解的統計觀念...
+    - title: 管制圖要有效的五個重要觀念
+      link: /post/control_chart_key_concepts
+      text: 落實管制圖的五個重要觀念，不要讓管制圖流於空洞的品質口號或品質稽核的樣版...
+

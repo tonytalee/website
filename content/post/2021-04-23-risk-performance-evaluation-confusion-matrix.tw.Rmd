@@ -6,7 +6,7 @@ slug: risk-performance-evaluation-confusion-matrix
 categories:
   - data analysis
 tags: ['confusion matrix', 'model evaluation']
-Description: ''
+Description: '了解 confusion matrix, 了解應用模型的效能評估。'
 Tags: []
 Categories: []
 DisableComments: no
