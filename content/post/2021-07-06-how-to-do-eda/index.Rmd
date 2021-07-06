@@ -1,15 +1,16 @@
 ---
-title: "探索式資料分析如何做？"
-author: "tony"
-date: '2021-06-28'
-slug: eda-how
-categories: data analysis
-tags: EDA
+title: 探索式資料分析如何做？
+author: tony
+date: '2021-07-06'
+slug: how-to-do-eda
+categories:
+  - data analysis
+tags:
+  - EDA
 Description: ''
 Tags: []
 Categories: []
 DisableComments: no
----
 ---
 ```{r global_options, include=FALSE} 
 knitr::opts_chunk$set(dev='png', warning=FALSE, message=FALSE, dpi=72, fig.width= 6, fig.asp = 0.618, prompt = FALSE, comment = "") 
