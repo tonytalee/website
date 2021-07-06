@@ -1,0 +1,18 @@
+---
+title: Test deploy
+author: tony
+date: '2021-07-06'
+slug: test-deploy
+categories:
+  - data analysis
+tags:
+  - EDA
+Description: ''
+Tags: []
+Categories: []
+DisableComments: no
+---
+
+## Test delopy
+
+some test
