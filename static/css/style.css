@@ -19,6 +19,16 @@ a.anchor-section {
     display: none;
 }
 
+code {
+  font-family: Courier, 'Courier New', monospace;
+  font-size: 16px;
+}
+
+table {
+  font-family: Courier, 'Courier New', monospace;
+  font-size: 16px;
+}
+
 h1 {
     font-size: 44px;
     letter-spacing: 1px;
@@ -41,6 +51,12 @@ h4 {
     font-weight: 500;
     margin-top: 1.5em;
     margin-bottom: 0;
+}
+
+h6 {
+  font-size: 18px;
+  color: #73303C;
+  margin-block-end: 0px;
 }
 
 

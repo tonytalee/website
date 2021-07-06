@@ -4,6 +4,9 @@ demoItem:
       - title: 養成數據智能，為什麼？如何做？
         link: /post/data-intelligence-why-and-how
         text: 數據智能是將數據轉化為價值的能力。數據智能在挖掘問題或機會、解決問題及促進理性決策等企業經營基礎層面提供無可取待的價值...
+      - title: 探索式資料分析如何做？
+        link: /post/eda-how
+        text: 探索式資料分析是所有分析的基礎。從工廠日常的工程分析到高階的AI預測模型，都少不了探索式資料分析的基本工...
       - title: 以數據分析驅動持續改善
         link: /post/data_driven_continuous_improvement
         text: 持續改善是企業競爭力的基石，而數據分析是有效確保持續改善能達到最大效能的關鍵能力和思維方法...
