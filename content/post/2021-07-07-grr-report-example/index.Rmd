@@ -1,19 +1,13 @@
 ---
-output:
-  html_document:
-    highlight: tango
-    css: markdown01.css
-    toc: yes
-    self_contained: yes
-params:
-  df: params$df
-  tolerance: params$tolerance
-  grr_criteria: params$grr_criteria
-  rptTitle: params$rptTitle
-  rptDescrip: params$rptDescrip
-  systemId: systemId
-  author: author
-title: "`r rptTitle`"
+title: GRR 分析報告範例
+author: R package build
+date: '2021-07-07'
+slug: grr-report-example
+categories:
+  - GRR
+tags:
+  - GRR
+Description: 'An example of GRR reporting by Rmarkdown'
 ---
 
 ```{r global_options, include=FALSE} 
@@ -21,36 +15,55 @@ knitr::opts_chunk$set(dev='png',echo=FALSE, warning=FALSE, message=FALSE)
 ```
 
 
-```{r, include=FALSE}
+```{r, include=FALSE, cache=TRUE}
+options(knitr.kable.NA = '')
+# Load libraries and raw data
+library(formattable)
+library(kableExtra)
+library(knitr)
+library(lubridate)
+library(scales)
+library(ggplot2)
+library(GGally)
+library(tidyr)
+library(dplyr)
+library(readr)
+library(tibble)
+library(stringr)
+library(purrr)
+library(forcats)
+library(plotly)
+library(setGplot)
+library(setPlotly)
+library(spcChart)
+library(qcc)
+library(car)
+source("../function/grr_functions.R")
+source("../function/spc_functions.R")
+source("../function/html_setting.R")
+
+
+# parameters
+df = read_csv("../data/grr_data.csv")
+tolerance = 66
+grr_criteria = c(0.1, 0.3)
 
 # grr 
 li_grr <- fun.grr.std(df, tolerance)
 tb_grr <- li_grr$tb_grr
+
 ```
 
-<!--- header section --->
-<div id = 'headerx'>
-Measurement system: `r systemId`    
-Author: `r author`    
-Date: `r format(Sys.Date())`
-</div>
+這是 GRR 分析報告的一個範例。以圖表配合解說，讓使用者更輕鬆的的解讀 GRR 測試的結果以做出更正確的判斷。
 
-<!--- description section --->
-<div id = 'description'>
-`r rptDescrip`
-</div>
+使用的工具和方法參考<a href="http://shiny.sightingdata.com/shiny/grr" target="_blank">GRR分析應用工具</a>和<a href="/post/grr_interpret" target="_blank">如何解讀 GRR 分析結果</a>。
 
+<hr>
 <!--- body section --->
 ## GRR summary
 
-```{r grr_note, results= 'asis'}
+```{r grr_note, results= 'asis', cache=TRUE}
 cat("<div class= 'listx'>")
-
-# Number of parts
-if (ract_grr_li()$n_parts < 5) {
-    note <- "Number of parts are less than 5! It's not enough to make a reliable GRR analysis"
-    cat("<p>", cross_mark, note, "</p>")
-}
 
 # GRR
 perSV <- tb_grr["Total R&R", "perSV"]
@@ -135,7 +148,7 @@ cat("</div>")
 ```
 
 
-```{r}
+```{r, cache=TRUE}
 # create GRR table
 colnames = c("Variance", "Std. Dev.", "Study Var.", "% Study Var.", 
              "% Contribution")
@@ -161,7 +174,7 @@ if (nrow(tb_grr) > 5) {
 
 ```
 
-```{r grr_table, results= 'asis', dpi=72, fig.width= 10, fig.asp = 0.618}
+```{r grr_table, results= 'asis', dpi=72, fig.width= 10, fig.asp = 0.618, cache=TRUE}
 # show compoent plot
 li_grr$p_comp
 
@@ -169,10 +182,11 @@ li_grr$p_comp
 tbl 
 ```
 
+<hr>
 
 ## X&#772;-R chart
 
-```{r Xbar-R_analysis, include= FALSE}
+```{r Xbar-R_analysis, include= FALSE, cache=TRUE}
 df_xbar <- li_grr$li_spc$df_xbar
 total_points <-  nrow(df_xbar)
 xbar_ooc_rate <- nrow(df_xbar[df_xbar$label != "normal",]) / total_points
@@ -207,13 +221,15 @@ if (r_normal_rate < 0.75) {
 `r mark2` R chart of this GRR test has `r round(r_normal_rate * 100)`% data points inside control limits. `r note2`
 </div>
 
-```{r x_r_chart, results='asis', dpi=72, fig.width= 10, fig.asp = 0.618}
+```{r x_r_chart, results='asis', dpi=72, fig.width= 10, fig.asp = 0.618, cache=TRUE}
 li_grr$li_spc$p
 ```
 
+<hr>
+
 ## Measurement by operators
 
-```{r operator, results='asis'}
+```{r operator, results='asis', cache=TRUE}
 cat("<div class= 'listx'>")
 
 # Effect of operator
@@ -249,8 +265,10 @@ cat("</div>")
 li_grr$p_oper
 ```
 
+<hr>
+
 ## Interaction of operator by part
-```{r interaction, results='asis'}
+```{r interaction, results='asis', cache=TRUE}
 cat("<div class= 'listx'>")
 if (li_grr$pValue_interact < 0.05) {
     mark <- cross_mark
@@ -270,8 +288,10 @@ cat("</div>")
 li_grr$p_inter
 ```
 
+<hr>
+
 ## Measurement by parts
-```{r part, results= 'asis'}
+```{r part, results= 'asis', cache=TRUE}
 cat("<div class= 'listx'>")
 # Equal variation across operators
 part_varTest_pValue <- round(li_grr$part_varTest_pValue, 3)
@@ -293,10 +313,13 @@ cat("</div>")
 li_grr$p_part
 ```
 
+<hr>
+
 ## ANOVA
-```{r, results='asis'}
+```{r, results='asis', cache=TRUE}
 options(knitr.kable.NA = '')
 kable(li_grr$aov, digits = 3) %>%
     kable_styling(full_width = F)
 ```
 
+<hr>

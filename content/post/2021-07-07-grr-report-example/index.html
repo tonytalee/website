@@ -1,0 +1,333 @@
+---
+title: GRR 分析報告範例
+author: R package build
+date: '2021-07-07'
+slug: grr-report-example
+categories:
+  - GRR
+tags:
+  - GRR
+Description: 'An example of GRR reporting by Rmarkdown'
+---
+
+<script src="{{< blogdown/postref >}}index_files/kePrint/kePrint.js"></script>
+<link href="{{< blogdown/postref >}}index_files/lightable/lightable.css" rel="stylesheet" />
+<script src="{{< blogdown/postref >}}index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="{{< blogdown/postref >}}index_files/plotly-binding/plotly.js"></script>
+<script src="{{< blogdown/postref >}}index_files/typedarray/typedarray.min.js"></script>
+<script src="{{< blogdown/postref >}}index_files/jquery/jquery.min.js"></script>
+<link href="{{< blogdown/postref >}}index_files/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="{{< blogdown/postref >}}index_files/crosstalk/js/crosstalk.min.js"></script>
+<link href="{{< blogdown/postref >}}index_files/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="{{< blogdown/postref >}}index_files/plotly-main/plotly-latest.min.js"></script>
+
+
+<p>這是 GRR 分析報告的一個範例。以圖表配合解說，讓使用者更輕鬆的的解讀 GRR 測試的結果以做出更正確的判斷。</p>
+<p>使用的工具和方法參考<a href="http://shiny.sightingdata.com/shiny/grr" target="_blank">GRR分析應用工具</a>和<a href="/post/grr_interpret" target="_blank">如何解讀 GRR 分析結果</a>。</p>
+<hr>
+<!--- body section --->
+<div id="grr-summary" class="section level2">
+<h2>GRR summary</h2>
+<div class="listx">
+<p>
+<span style="color:orange;font-weight:bold;margin-right:16px;font-size:1.5em;">!</span> %GRR = 22.1 : <br>The measurement system is potentially acceptable.
+</p>
+<p>
+<span style="color:green;font-weight:bold;margin-right:10px;font-size:1.5em;">✓</span> Number of distinct categories = 6 : <br>The measurement system can distinguish between parts.
+</p>
+<p>
+<span style="color:steelblue;font-weight:bold;margin-right:17px;font-size:1.2em;">𝒾</span> Repeatability contributes 54.8% of GRR variance, and reproducibility contributes 45.2%.
+</p>
+<p>
+<span style="color:red;font-weight:bold;margin-right:10px;font-size:1.5em;">✗</span> Effect of operators is significant, with p-value of ANOVA = 0.<br>Operator contributes 45.2% of GRR variance.
+</p>
+<p>
+<span style="color:green;font-weight:bold;margin-right:10px;font-size:1.5em;">✓</span> There is no interaction between operators and parts.
+</p>
+<p>
+<span style="color:steelblue;font-weight:bold;margin-right:17px;font-size:1.2em;">𝒾</span> Number of operators = 3, Number of trials = 3, Number of parts = 9
+</p>
+</div>
+<div id="htmlwidget-1" style="width:770px;height:395px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"visdat":{"b6329b512ff":["function () ","plotlyVisDat"]},"cur_data":"b6329b512ff","attrs":{"b6329b512ff":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"bar","text":{},"name":"% Study Variation","textposition":"outside","marker":{"color":"#4682B4","width":1.5},"inherit":true},"b6329b512ff.1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"bar","text":{},"name":"% Contribution","textposition":"outside","marker":{"color":"#CD3700","width":1.5},"inherit":true},"b6329b512ff.2":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"bar","text":{},"name":"% Tolerance","textposition":"outside","marker":{"color":"#458B00","width":1.5},"inherit":true}},"layout":{"width":770,"height":395,"margin":{"b":40,"l":60,"t":100,"r":10},"title":"Component of variation","xaxis":{"domain":[0,1],"automargin":true,"title":"","type":"category","categoryorder":"array","categoryarray":["Total R&R","Repeatability","Reproducibility","Part"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"%","range":[0,112.125]},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["Total R&R","Repeatability","Reproducibility","Part"],"y":[22.1,16.3,14.8,97.5],"type":"bar","text":[22.1,16.3,14.8,97.5],"name":"% Study Variation","textposition":["outside","outside","outside","outside"],"marker":{"color":"#4682B4","width":1.5,"line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Total R&R","Repeatability","Reproducibility","Part"],"y":[4.9,2.7,2.2,95.1],"type":"bar","text":[4.9,2.7,2.2,95.1],"name":"% Contribution","textposition":["outside","outside","outside","outside"],"marker":{"color":"#CD3700","width":1.5,"line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Total R&R","Repeatability","Reproducibility","Part"],"y":[20.4,15.1,13.7,89.9],"type":"bar","text":[20.4,15.1,13.7,89.9],"name":"% Tolerance","textposition":["outside","outside","outside","outside"],"marker":{"color":"#458B00","width":1.5,"line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<table class="table table-hover" style="font-size: 14px; width: auto !important; ">
+<caption style="font-size: initial !important;">
+<span id="tab:unnamed-chunk-2">Table 1: </span>GRR table
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Variance
+</th>
+<th style="text-align:right;">
+Std. Dev.
+</th>
+<th style="text-align:right;">
+Study Var.
+</th>
+<th style="text-align:right;">
+% Study Var.
+</th>
+<th style="text-align:right;">
+% Contribution
+</th>
+<th style="text-align:right;">
+% Tolerance
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Total R&amp;R
+</td>
+<td style="text-align:right;">
+5.014
+</td>
+<td style="text-align:right;">
+2.239
+</td>
+<td style="text-align:right;">
+13.436
+</td>
+<td style="text-align:right;font-weight: bold;">
+22.1
+</td>
+<td style="text-align:right;">
+4.9
+</td>
+<td style="text-align:right;">
+20.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left:  2em;font-weight: bold;color: grey !important;" indentlevel="1">
+Repeatability
+</td>
+<td style="text-align:right;color: grey !important;">
+2.746
+</td>
+<td style="text-align:right;color: grey !important;">
+1.657
+</td>
+<td style="text-align:right;color: grey !important;">
+9.943
+</td>
+<td style="text-align:right;font-weight: bold;color: grey !important;">
+16.3
+</td>
+<td style="text-align:right;color: grey !important;">
+2.7
+</td>
+<td style="text-align:right;color: grey !important;">
+15.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left:  2em;font-weight: bold;color: grey !important;" indentlevel="1">
+Reproducibility
+</td>
+<td style="text-align:right;color: grey !important;">
+2.268
+</td>
+<td style="text-align:right;color: grey !important;">
+1.506
+</td>
+<td style="text-align:right;color: grey !important;">
+9.036
+</td>
+<td style="text-align:right;font-weight: bold;color: grey !important;">
+14.8
+</td>
+<td style="text-align:right;color: grey !important;">
+2.2
+</td>
+<td style="text-align:right;color: grey !important;">
+13.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Part
+</td>
+<td style="text-align:right;">
+97.879
+</td>
+<td style="text-align:right;">
+9.893
+</td>
+<td style="text-align:right;">
+59.360
+</td>
+<td style="text-align:right;font-weight: bold;">
+97.5
+</td>
+<td style="text-align:right;">
+95.1
+</td>
+<td style="text-align:right;">
+89.9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Total Variation
+</td>
+<td style="text-align:right;">
+102.893
+</td>
+<td style="text-align:right;">
+10.144
+</td>
+<td style="text-align:right;">
+60.862
+</td>
+<td style="text-align:right;font-weight: bold;">
+100.0
+</td>
+<td style="text-align:right;">
+100.0
+</td>
+<td style="text-align:right;">
+92.2
+</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+<div id="x̄-r-chart" class="section level2">
+<h2>X̄-R chart</h2>
+<div class="listx">
+<p><span style="color:orange;font-weight:bold;margin-right:16px;font-size:1.5em;">!</span> X̄ chart of this GRR test has 67% of data points out of control. That means the measurement system can but not well detect the parts variation.</p>
+<p><span style="color:green;font-weight:bold;margin-right:10px;font-size:1.5em;">✓</span> R chart of this GRR test has 100% data points inside control limits. The measurement system has good consistency.</p>
+</div>
+<div id="htmlwidget-2" style="width:720px;height:444.96px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"data":[{"x":["A-p1","A-p2","A-p3","A-p4","A-p5","A-p6","A-p7","A-p8","A-p9","B-p1","B-p2","B-p3","B-p4","B-p5","B-p6","B-p7","B-p8","B-p9","C-p1","C-p2","C-p3","C-p4","C-p5","C-p6","C-p7","C-p8","C-p9"],"y":[106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014,106.623843688014],"type":"scatter","mode":"lines","showlegend":false,"line":{"color":"red","width":0.7,"dash":"dash"},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624","UCL:  106.624"],"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["A-p1","A-p2","A-p3","A-p4","A-p5","A-p6","A-p7","A-p8","A-p9","B-p1","B-p2","B-p3","B-p4","B-p5","B-p6","B-p7","B-p8","B-p9","C-p1","C-p2","C-p3","C-p4","C-p5","C-p6","C-p7","C-p8","C-p9"],"y":[99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504,99.9994732228504],"type":"scatter","mode":"lines","showlegend":false,"line":{"color":"red","width":0.7,"dash":"dash"},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999","LCL:  99.999"],"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["A-p1","A-p2","A-p3","A-p4","A-p5","A-p6","A-p7","A-p8","A-p9","B-p1","B-p2","B-p3","B-p4","B-p5","B-p6","B-p7","B-p8","B-p9","C-p1","C-p2","C-p3","C-p4","C-p5","C-p6","C-p7","C-p8","C-p9"],"y":[103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432,103.311658455432],"type":"scatter","mode":"lines","showlegend":false,"line":{"color":"darkgreen","width":0.7},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117","CL:  103.3117"],"marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["A-p1","A-p2","A-p3","A-p4","A-p5","A-p6","A-p7","A-p8","A-p9","B-p1","B-p2","B-p3","B-p4","B-p5","B-p6","B-p7","B-p8","B-p9","C-p1","C-p2","C-p3","C-p4","C-p5","C-p6","C-p7","C-p8","C-p9"],"y":[92.884,100.481,89.877,120.259,102.632,89.744,104.277,109.429,105.136,95.906,103.493,92.896,123.273,105.671,92.698,107.379,112.409,108.238,94.863,102.474,91.955,122.196,104.626,91.701,106.258,111.509,107.15],"type":"scatter","mode":"lines","line":{"color":"steelblue","width":1},"showlegend":false,"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["A-p1","A-p2","A-p3","A-p4","A-p5","A-p6","A-p7","A-p8","A-p9"],"y":[92.884,100.481,89.877,120.259,102.632,89.744,104.277,109.429,105.136],"type":"scatter","mode":"markers","marker":{"color":"rgba(70,130,180,1)","size":7,"line":{"color":"white","width":1}},"hoverinfo":["text","text","text","text","text","text","text","text","text"],"text":["operator-parts: A-p1 <br> Xbar:  92.884 <br> Operator: A <br> Part: p1","operator-parts: A-p2 <br> Xbar: 100.481 <br> Operator: A <br> Part: p2","operator-parts: A-p3 <br> Xbar:  89.877 <br> Operator: A <br> Part: p3","operator-parts: A-p4 <br> Xbar: 120.259 <br> Operator: A <br> Part: p4","operator-parts: A-p5 <br> Xbar: 102.632 <br> Operator: A <br> Part: p5","operator-parts: A-p6 <br> Xbar:  89.744 <br> Operator: A <br> Part: p6","operator-parts: A-p7 <br> Xbar: 104.277 <br> Operator: A <br> Part: p7","operator-parts: A-p8 <br> Xbar: 109.429 <br> Operator: A <br> Part: p8","operator-parts: A-p9 <br> Xbar: 105.136 <br> Operator: A <br> Part: p9"],"name":"A","textfont":{"color":"rgba(70,130,180,1)"},"error_y":{"color":"rgba(70,130,180,1)"},"error_x":{"color":"rgba(70,130,180,1)"},"line":{"color":"rgba(70,130,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["B-p1","B-p2","B-p3","B-p4","B-p5","B-p6","B-p7","B-p8","B-p9"],"y":[95.906,103.493,92.896,123.273,105.671,92.698,107.379,112.409,108.238],"type":"scatter","mode":"markers","marker":{"color":"rgba(205,55,0,1)","size":7,"line":{"color":"white","width":1}},"hoverinfo":["text","text","text","text","text","text","text","text","text"],"text":["operator-parts: B-p1 <br> Xbar:  95.906 <br> Operator: B <br> Part: p1","operator-parts: B-p2 <br> Xbar: 103.493 <br> Operator: B <br> Part: p2","operator-parts: B-p3 <br> Xbar:  92.896 <br> Operator: B <br> Part: p3","operator-parts: B-p4 <br> Xbar: 123.273 <br> Operator: B <br> Part: p4","operator-parts: B-p5 <br> Xbar: 105.671 <br> Operator: B <br> Part: p5","operator-parts: B-p6 <br> Xbar:  92.698 <br> Operator: B <br> Part: p6","operator-parts: B-p7 <br> Xbar: 107.379 <br> Operator: B <br> Part: p7","operator-parts: B-p8 <br> Xbar: 112.409 <br> Operator: B <br> Part: p8","operator-parts: B-p9 <br> Xbar: 108.238 <br> Operator: B <br> Part: p9"],"name":"B","textfont":{"color":"rgba(205,55,0,1)"},"error_y":{"color":"rgba(205,55,0,1)"},"error_x":{"color":"rgba(205,55,0,1)"},"line":{"color":"rgba(205,55,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["C-p1","C-p2","C-p3","C-p4","C-p5","C-p6","C-p7","C-p8","C-p9"],"y":[94.863,102.474,91.955,122.196,104.626,91.701,106.258,111.509,107.15],"type":"scatter","mode":"markers","marker":{"color":"rgba(69,139,0,1)","size":7,"line":{"color":"white","width":1}},"hoverinfo":["text","text","text","text","text","text","text","text","text"],"text":["operator-parts: C-p1 <br> Xbar:  94.863 <br> Operator: C <br> Part: p1","operator-parts: C-p2 <br> Xbar: 102.474 <br> Operator: C <br> Part: p2","operator-parts: C-p3 <br> Xbar:  91.955 <br> Operator: C <br> Part: p3","operator-parts: C-p4 <br> Xbar: 122.196 <br> Operator: C <br> Part: p4","operator-parts: C-p5 <br> Xbar: 104.626 <br> Operator: C <br> Part: p5","operator-parts: C-p6 <br> Xbar:  91.701 <br> Operator: C <br> Part: p6","operator-parts: C-p7 <br> Xbar: 106.258 <br> Operator: C <br> Part: p7","operator-parts: C-p8 <br> Xbar: 111.509 <br> Operator: C <br> Part: p8","operator-parts: C-p9 <br> Xbar: 107.150 <br> Operator: C <br> Part: p9"],"name":"C","textfont":{"color":"rgba(69,139,0,1)"},"error_y":{"color":"rgba(69,139,0,1)"},"error_x":{"color":"rgba(69,139,0,1)"},"line":{"color":"rgba(69,139,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["A-p1","A-p2","A-p3","A-p4","A-p5","A-p6","A-p7","A-p8","A-p9","B-p1","B-p2","B-p3","B-p4","B-p5","B-p6","B-p7","B-p8","B-p9","C-p1","C-p2","C-p3","C-p4","C-p5","C-p6","C-p7","C-p8","C-p9"],"showlegend":false,"y":[8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129,8.3341467915129],"type":"scatter","mode":"lines","line":{"color":"red","width":0.7,"dash":"dash"},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334","UCL:  8.334"],"marker":{"color":"rgba(127,127,127,1)","line":{"color":"rgba(127,127,127,1)"}},"error_y":{"color":"rgba(127,127,127,1)"},"error_x":{"color":"rgba(127,127,127,1)"},"xaxis":"x","yaxis":"y2","frame":null},{"x":["A-p1","A-p2","A-p3","A-p4","A-p5","A-p6","A-p7","A-p8","A-p9","B-p1","B-p2","B-p3","B-p4","B-p5","B-p6","B-p7","B-p8","B-p9","C-p1","C-p2","C-p3","C-p4","C-p5","C-p6","C-p7","C-p8","C-p9"],"showlegend":false,"y":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"type":"scatter","mode":"lines","line":{"color":"red","width":0.7,"dash":"dash"},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0","LCL:  0"],"marker":{"color":"rgba(188,189,34,1)","line":{"color":"rgba(188,189,34,1)"}},"error_y":{"color":"rgba(188,189,34,1)"},"error_x":{"color":"rgba(188,189,34,1)"},"xaxis":"x","yaxis":"y2","frame":null},{"x":["A-p1","A-p2","A-p3","A-p4","A-p5","A-p6","A-p7","A-p8","A-p9","B-p1","B-p2","B-p3","B-p4","B-p5","B-p6","B-p7","B-p8","B-p9","C-p1","C-p2","C-p3","C-p4","C-p5","C-p6","C-p7","C-p8","C-p9"],"showlegend":false,"y":[3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333,3.23750872333333],"type":"scatter","mode":"lines","line":{"color":"darkgreen","width":0.7},"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375","CL:  3.2375"],"marker":{"color":"rgba(23,190,207,1)","line":{"color":"rgba(23,190,207,1)"}},"error_y":{"color":"rgba(23,190,207,1)"},"error_x":{"color":"rgba(23,190,207,1)"},"xaxis":"x","yaxis":"y2","frame":null},{"x":["A-p1","A-p2","A-p3","A-p4","A-p5","A-p6","A-p7","A-p8","A-p9","B-p1","B-p2","B-p3","B-p4","B-p5","B-p6","B-p7","B-p8","B-p9","C-p1","C-p2","C-p3","C-p4","C-p5","C-p6","C-p7","C-p8","C-p9"],"showlegend":false,"y":[3.634,6.679,1.978,0.65,5.543,1.551,3.777,2.923,2.647,3.668,6.67,1.839,0.691,5.492,1.603,3.597,2.762,2.891,3.542,6.522,1.778,0.64,5.578,1.628,3.611,2.954,2.566],"type":"scatter","mode":"lines","line":{"color":"steelblue","width":1},"hoverinfo":["none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none","none"],"marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y2","frame":null},{"x":["A-p1","A-p2","A-p3","A-p4","A-p5","A-p6","A-p7","A-p8","A-p9"],"showlegend":false,"y":[3.634,6.679,1.978,0.65,5.543,1.551,3.777,2.923,2.647],"type":"scatter","mode":"markers","marker":{"color":"rgba(70,130,180,1)","size":7,"line":{"color":"white","width":1}},"hoverinfo":["text","text","text","text","text","text","text","text","text"],"text":["operator-parts: A-p1 <br> R: 3.634 <br> Operator: A <br> Part: p1","operator-parts: A-p2 <br> R: 6.679 <br> Operator: A <br> Part: p2","operator-parts: A-p3 <br> R: 1.978 <br> Operator: A <br> Part: p3","operator-parts: A-p4 <br> R: 0.650 <br> Operator: A <br> Part: p4","operator-parts: A-p5 <br> R: 5.543 <br> Operator: A <br> Part: p5","operator-parts: A-p6 <br> R: 1.551 <br> Operator: A <br> Part: p6","operator-parts: A-p7 <br> R: 3.777 <br> Operator: A <br> Part: p7","operator-parts: A-p8 <br> R: 2.923 <br> Operator: A <br> Part: p8","operator-parts: A-p9 <br> R: 2.647 <br> Operator: A <br> Part: p9"],"name":"A","textfont":{"color":"rgba(70,130,180,1)"},"error_y":{"color":"rgba(70,130,180,1)"},"error_x":{"color":"rgba(70,130,180,1)"},"line":{"color":"rgba(70,130,180,1)"},"xaxis":"x","yaxis":"y2","frame":null},{"x":["B-p1","B-p2","B-p3","B-p4","B-p5","B-p6","B-p7","B-p8","B-p9"],"showlegend":false,"y":[3.668,6.67,1.839,0.691,5.492,1.603,3.597,2.762,2.891],"type":"scatter","mode":"markers","marker":{"color":"rgba(205,55,0,1)","size":7,"line":{"color":"white","width":1}},"hoverinfo":["text","text","text","text","text","text","text","text","text"],"text":["operator-parts: B-p1 <br> R: 3.668 <br> Operator: B <br> Part: p1","operator-parts: B-p2 <br> R: 6.670 <br> Operator: B <br> Part: p2","operator-parts: B-p3 <br> R: 1.839 <br> Operator: B <br> Part: p3","operator-parts: B-p4 <br> R: 0.691 <br> Operator: B <br> Part: p4","operator-parts: B-p5 <br> R: 5.492 <br> Operator: B <br> Part: p5","operator-parts: B-p6 <br> R: 1.603 <br> Operator: B <br> Part: p6","operator-parts: B-p7 <br> R: 3.597 <br> Operator: B <br> Part: p7","operator-parts: B-p8 <br> R: 2.762 <br> Operator: B <br> Part: p8","operator-parts: B-p9 <br> R: 2.891 <br> Operator: B <br> Part: p9"],"name":"B","textfont":{"color":"rgba(205,55,0,1)"},"error_y":{"color":"rgba(205,55,0,1)"},"error_x":{"color":"rgba(205,55,0,1)"},"line":{"color":"rgba(205,55,0,1)"},"xaxis":"x","yaxis":"y2","frame":null},{"x":["C-p1","C-p2","C-p3","C-p4","C-p5","C-p6","C-p7","C-p8","C-p9"],"showlegend":false,"y":[3.542,6.522,1.778,0.64,5.578,1.628,3.611,2.954,2.566],"type":"scatter","mode":"markers","marker":{"color":"rgba(69,139,0,1)","size":7,"line":{"color":"white","width":1}},"hoverinfo":["text","text","text","text","text","text","text","text","text"],"text":["operator-parts: C-p1 <br> R: 3.542 <br> Operator: C <br> Part: p1","operator-parts: C-p2 <br> R: 6.522 <br> Operator: C <br> Part: p2","operator-parts: C-p3 <br> R: 1.778 <br> Operator: C <br> Part: p3","operator-parts: C-p4 <br> R: 0.640 <br> Operator: C <br> Part: p4","operator-parts: C-p5 <br> R: 5.578 <br> Operator: C <br> Part: p5","operator-parts: C-p6 <br> R: 1.628 <br> Operator: C <br> Part: p6","operator-parts: C-p7 <br> R: 3.611 <br> Operator: C <br> Part: p7","operator-parts: C-p8 <br> R: 2.954 <br> Operator: C <br> Part: p8","operator-parts: C-p9 <br> R: 2.566 <br> Operator: C <br> Part: p9"],"name":"C","textfont":{"color":"rgba(69,139,0,1)"},"error_y":{"color":"rgba(69,139,0,1)"},"error_x":{"color":"rgba(69,139,0,1)"},"line":{"color":"rgba(69,139,0,1)"},"xaxis":"x","yaxis":"y2","frame":null}],"layout":{"xaxis":{"domain":[0,1],"automargin":true,"title":"operator-parts","zeroline":false,"showline":false,"showticklabels":false,"showgrid":false,"type":"category","categoryorder":"array","categoryarray":["A-p1","A-p2","A-p3","A-p4","A-p5","A-p6","A-p7","A-p8","A-p9","B-p1","B-p2","B-p3","B-p4","B-p5","B-p6","B-p7","B-p8","B-p9","C-p1","C-p2","C-p3","C-p4","C-p5","C-p6","C-p7","C-p8","C-p9"],"anchor":"y2"},"yaxis2":{"domain":[0,0.38],"automargin":true,"title":"R","autotick":false,"ticks":"","tickmode":"array","tickvals":[0,3.2375,8.3341],"zeroline":false,"tickprefix":" ","anchor":"x"},"yaxis":{"domain":[0.42,1],"automargin":true,"title":"Xbar","autotick":false,"ticks":"","tickmode":"array","tickvals":[99.9995,103.3117,106.6238],"zeroline":false,"tickprefix":" ","anchor":"x"},"annotations":[],"shapes":[],"images":[],"margin":{"b":40,"l":100,"t":25,"r":10},"hovermode":"closest","showlegend":true,"title":""},"attrs":{"b6326bfd526":{"x":{},"colors":["#4682B4","#CD3700","#458B00"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"type":"scatter","mode":"lines","showlegend":false,"line":{"color":"red","width":0.7,"dash":"dash"},"hoverinfo":"text","text":{},"inherit":true},"b6326bfd526.1":{"x":{},"colors":["#4682B4","#CD3700","#458B00"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"type":"scatter","mode":"lines","showlegend":false,"line":{"color":"red","width":0.7,"dash":"dash"},"hoverinfo":"text","text":{},"inherit":true},"b6326bfd526.2":{"x":{},"colors":["#4682B4","#CD3700","#458B00"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"type":"scatter","mode":"lines","showlegend":false,"line":{"color":"darkgreen","width":0.7},"hoverinfo":"text","text":{},"inherit":true},"b6326bfd526.3":{"x":{},"colors":["#4682B4","#CD3700","#458B00"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"type":"scatter","mode":"lines","line":{"color":"steelblue","width":1},"showlegend":false,"hoverinfo":"none","inherit":true},"b6326bfd526.4":{"x":{},"colors":["#4682B4","#CD3700","#458B00"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"type":"scatter","mode":"markers","color":{},"marker":{"size":7,"line":{"color":"white","width":1}},"hoverinfo":"text","text":{},"inherit":true},"b637c42c5a9":{"x":{},"showlegend":false,"colors":["#4682B4","#CD3700","#458B00"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"type":"scatter","mode":"lines","line":{"color":"red","width":0.7,"dash":"dash"},"hoverinfo":"text","text":{},"inherit":true},"b637c42c5a9.1":{"x":{},"showlegend":false,"colors":["#4682B4","#CD3700","#458B00"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"type":"scatter","mode":"lines","line":{"color":"red","width":0.7,"dash":"dash"},"hoverinfo":"text","text":{},"inherit":true},"b637c42c5a9.2":{"x":{},"showlegend":false,"colors":["#4682B4","#CD3700","#458B00"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"type":"scatter","mode":"lines","line":{"color":"darkgreen","width":0.7},"hoverinfo":"text","text":{},"inherit":true},"b637c42c5a9.3":{"x":{},"showlegend":false,"colors":["#4682B4","#CD3700","#458B00"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"type":"scatter","mode":"lines","line":{"color":"steelblue","width":1},"hoverinfo":"none","inherit":true},"b637c42c5a9.4":{"x":{},"showlegend":false,"colors":["#4682B4","#CD3700","#458B00"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"y":{},"type":"scatter","mode":"markers","color":{},"marker":{"size":7,"line":{"color":"white","width":1}},"hoverinfo":"text","text":{},"inherit":true}},"source":"A","config":{"showSendToCloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<hr>
+</div>
+<div id="measurement-by-operators" class="section level2">
+<h2>Measurement by operators</h2>
+<div class="listx">
+<p>
+<span style="color:red;font-weight:bold;margin-right:10px;font-size:1.5em;">✗</span> Operators measuring the parts similiarly: No.<br>P-value of ANOVA (comparing mean) = 0.
+</p>
+<p>
+<span style="color:green;font-weight:bold;margin-right:10px;font-size:1.5em;">✓</span> Operators’ measurement have the same variation: Yes.<br>P-value of Levene’s test (comparing variance) = 1.
+</p>
+</div>
+<div id="htmlwidget-3" style="width:640px;height:395px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3">{"x":{"visdat":{"b632ef238bd":["function () ","plotlyVisDat"],"b63206b185f":["function () ","data"]},"cur_data":"b63206b185f","attrs":{"b632ef238bd":{"showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"box","color":["steelblue"],"inherit":true},"b63206b185f":{"showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","color":["#CD3700"],"inherit":true,"mode":"markers+lines","marker":{"size":15,"symbol":"circle-x-open"}}},"layout":{"width":640,"height":395,"margin":{"b":40,"l":60,"t":100,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"operator","type":"category","categoryorder":"array","categoryarray":["A","B","C"],"zeroline":false,"showgrid":true},"yaxis":{"domain":[0,1],"automargin":true,"title":"","zeroline":false,"showgrid":true},"hovermode":"closest","showlegend":false,"title":"Boxplot by Operators","autosize":false},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(70,130,180,0.5)","showlegend":false,"x":["A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C"],"y":[91.20913212,94.84347123,92.59959536,100.3796031,97.19268445,103.8719461,89.19902657,89.25651326,91.17656621,120.3453401,119.8907003,120.5408524,104.9513166,103.536174,99.40834065,90.71198405,89.36007507,89.16074154,102.3563868,104.3415914,106.1337747,111.051088,108.1281535,109.1090722,106.2593443,103.6128352,105.5369652,94.16970312,97.83753989,95.7095979,103.4559206,100.1762321,106.8466099,92.26872291,92.31217958,94.10769064,123.2745906,122.9271585,123.6177057,107.940082,106.6242848,102.4481512,93.65078141,92.39418704,92.04780523,105.4996891,107.5396314,109.0970525,113.9466746,111.1851254,112.0955667,109.499506,106.6089112,108.6059392,93.21249237,96.75427844,94.62225044,102.163008,99.36855103,105.8903365,91.45973997,91.31357441,93.09137264,122.4186273,121.7786086,122.3904164,106.9862902,105.482979,101.4084733,92.72090501,91.28933256,91.09250129,104.3401653,106.4829619,107.9509466,113.1223616,110.1681075,111.2366441,108.2228422,105.6572375,107.5690171],"type":"box","marker":{"symbol":4},"line":{"color":"rgba(70,130,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"showlegend":false,"x":["A","B","C"],"y":[101.63567683,104.662482934074,103.636815602222],"type":"scatter","mode":"markers+lines","marker":{"color":"rgba(205,55,0,1)","size":15,"symbol":"circle-x-open","line":{"color":"rgba(205,55,0,1)"}},"textfont":{"color":"rgba(205,55,0,1)"},"error_y":{"color":"rgba(205,55,0,1)"},"error_x":{"color":"rgba(205,55,0,1)"},"line":{"color":"rgba(205,55,0,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<hr>
+</div>
+<div id="interaction-of-operator-by-part" class="section level2">
+<h2>Interaction of operator by part</h2>
+<div class="listx">
+<p>
+<span style="color:green;font-weight:bold;margin-right:10px;font-size:1.5em;">✓</span> No interaction between operators and parts: Yes.<br>P-value of ANOVA = 1.
+</p>
+</div>
+<div id="htmlwidget-4" style="width:770px;height:395px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4">{"x":{"visdat":{"b63138f53b2":["function () ","plotlyVisDat"]},"cur_data":"b63138f53b2","attrs":{"b63138f53b2":{"text":{},"showlegend":true,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","hoverinfo":"text","color":["A","B","C","A","B","C","A","B","C","A","B","C","A","B","C","A","B","C","A","B","C","A","B","C","A","B","C"],"colors":["#4682B4","#FF4500","#458B00"],"marker":{"size":10,"line":{"color":"white","width":2}},"inherit":true}},"layout":{"width":770,"height":395,"margin":{"b":40,"l":60,"t":100,"r":10},"title":"Operators-Parts Interaction","xaxis":{"domain":[0,1],"automargin":true,"title":"Part","zeroline":false,"showgrid":true,"type":"category","categoryorder":"array","categoryarray":["p1","p2","p3","p4","p5","p6","p7","p8","p9"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Mean","zeroline":false,"showgrid":true},"autosize":false,"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"text":["Part: p1 <br> Mean:  92.8841 <br> Operator: A","Part: p2 <br> Mean: 100.4814 <br> Operator: A","Part: p3 <br> Mean:  89.8774 <br> Operator: A","Part: p4 <br> Mean: 120.2590 <br> Operator: A","Part: p5 <br> Mean: 102.6319 <br> Operator: A","Part: p6 <br> Mean:  89.7443 <br> Operator: A","Part: p7 <br> Mean: 104.2773 <br> Operator: A","Part: p8 <br> Mean: 109.4294 <br> Operator: A","Part: p9 <br> Mean: 105.1364 <br> Operator: A"],"showlegend":true,"x":["p1","p2","p3","p4","p5","p6","p7","p8","p9"],"y":[92.8840662366667,100.481411216667,89.87736868,120.258964266667,102.63194375,89.7442668866667,104.277250966667,109.4294379,105.136381566667],"type":"scatter","mode":"lines+markers","hoverinfo":["text","text","text","text","text","text","text","text","text"],"marker":{"color":"rgba(70,130,180,1)","size":10,"line":{"color":"white","width":2}},"name":"A","textfont":{"color":"rgba(70,130,180,1)"},"error_y":{"color":"rgba(70,130,180,1)"},"error_x":{"color":"rgba(70,130,180,1)"},"line":{"color":"rgba(70,130,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"text":["Part: p1 <br> Mean:  95.9056 <br> Operator: B","Part: p2 <br> Mean: 103.4929 <br> Operator: B","Part: p3 <br> Mean:  92.8962 <br> Operator: B","Part: p4 <br> Mean: 123.2732 <br> Operator: B","Part: p5 <br> Mean: 105.6708 <br> Operator: B","Part: p6 <br> Mean:  92.6976 <br> Operator: B","Part: p7 <br> Mean: 107.3788 <br> Operator: B","Part: p8 <br> Mean: 112.4091 <br> Operator: B","Part: p9 <br> Mean: 108.2381 <br> Operator: B"],"showlegend":true,"x":["p1","p2","p3","p4","p5","p6","p7","p8","p9"],"y":[95.9056136366667,103.492920866667,92.89619771,123.2731516,105.670839333333,92.6975912266667,107.378791,112.409122233333,108.2381188],"type":"scatter","mode":"lines+markers","hoverinfo":["text","text","text","text","text","text","text","text","text"],"marker":{"color":"rgba(255,69,0,1)","size":10,"line":{"color":"white","width":2}},"name":"B","textfont":{"color":"rgba(255,69,0,1)"},"error_y":{"color":"rgba(255,69,0,1)"},"error_x":{"color":"rgba(255,69,0,1)"},"line":{"color":"rgba(255,69,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"text":["Part: p1 <br> Mean:  94.8630 <br> Operator: C","Part: p2 <br> Mean: 102.4740 <br> Operator: C","Part: p3 <br> Mean:  91.9549 <br> Operator: C","Part: p4 <br> Mean: 122.1959 <br> Operator: C","Part: p5 <br> Mean: 104.6259 <br> Operator: C","Part: p6 <br> Mean:  91.7009 <br> Operator: C","Part: p7 <br> Mean: 106.2580 <br> Operator: C","Part: p8 <br> Mean: 111.5090 <br> Operator: C","Part: p9 <br> Mean: 107.1497 <br> Operator: C"],"showlegend":true,"x":["p1","p2","p3","p4","p5","p6","p7","p8","p9"],"y":[94.8630070833333,102.473965176667,91.9548956733333,122.1958841,104.625914166667,91.7009129533333,106.2580246,111.509037733333,107.149698933333],"type":"scatter","mode":"lines+markers","hoverinfo":["text","text","text","text","text","text","text","text","text"],"marker":{"color":"rgba(69,139,0,1)","size":10,"line":{"color":"white","width":2}},"name":"C","textfont":{"color":"rgba(69,139,0,1)"},"error_y":{"color":"rgba(69,139,0,1)"},"error_x":{"color":"rgba(69,139,0,1)"},"line":{"color":"rgba(69,139,0,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<hr>
+</div>
+<div id="measurement-by-parts" class="section level2">
+<h2>Measurement by parts</h2>
+<div class="listx">
+<p>
+<span style="color:green;font-weight:bold;margin-right:10px;font-size:1.5em;">✓</span> Parts are measured with the same variation: Yes.<br>P-value of Levene’s test (comparing variance) = 0.161.
+</p>
+</div>
+<div id="htmlwidget-5" style="width:640px;height:395px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5">{"x":{"visdat":{"b63570d1599":["function () ","plotlyVisDat"],"b631c051c75":["function () ","data"]},"cur_data":"b631c051c75","attrs":{"b63570d1599":{"showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"box","color":["steelblue"],"inherit":true},"b631c051c75":{"showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","color":["#CD3700"],"inherit":true,"mode":"markers+lines","marker":{"size":15,"symbol":"circle-x-open"}}},"layout":{"width":640,"height":395,"margin":{"b":40,"l":60,"t":100,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"part","type":"category","categoryorder":"array","categoryarray":["p1","p2","p3","p4","p5","p6","p7","p8","p9"],"zeroline":false,"showgrid":true},"yaxis":{"domain":[0,1],"automargin":true,"title":"","zeroline":false,"showgrid":true},"hovermode":"closest","showlegend":false,"title":"Boxplot by Parts","autosize":false},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(70,130,180,0.5)","showlegend":false,"x":["p1","p1","p1","p2","p2","p2","p3","p3","p3","p4","p4","p4","p5","p5","p5","p6","p6","p6","p7","p7","p7","p8","p8","p8","p9","p9","p9","p1","p1","p1","p2","p2","p2","p3","p3","p3","p4","p4","p4","p5","p5","p5","p6","p6","p6","p7","p7","p7","p8","p8","p8","p9","p9","p9","p1","p1","p1","p2","p2","p2","p3","p3","p3","p4","p4","p4","p5","p5","p5","p6","p6","p6","p7","p7","p7","p8","p8","p8","p9","p9","p9"],"y":[91.20913212,94.84347123,92.59959536,100.3796031,97.19268445,103.8719461,89.19902657,89.25651326,91.17656621,120.3453401,119.8907003,120.5408524,104.9513166,103.536174,99.40834065,90.71198405,89.36007507,89.16074154,102.3563868,104.3415914,106.1337747,111.051088,108.1281535,109.1090722,106.2593443,103.6128352,105.5369652,94.16970312,97.83753989,95.7095979,103.4559206,100.1762321,106.8466099,92.26872291,92.31217958,94.10769064,123.2745906,122.9271585,123.6177057,107.940082,106.6242848,102.4481512,93.65078141,92.39418704,92.04780523,105.4996891,107.5396314,109.0970525,113.9466746,111.1851254,112.0955667,109.499506,106.6089112,108.6059392,93.21249237,96.75427844,94.62225044,102.163008,99.36855103,105.8903365,91.45973997,91.31357441,93.09137264,122.4186273,121.7786086,122.3904164,106.9862902,105.482979,101.4084733,92.72090501,91.28933256,91.09250129,104.3401653,106.4829619,107.9509466,113.1223616,110.1681075,111.2366441,108.2228422,105.6572375,107.5690171],"type":"box","marker":{"symbol":4},"line":{"color":"rgba(70,130,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"showlegend":false,"x":["p1","p2","p3","p4","p5","p6","p7","p8","p9"],"y":[94.5508956522222,102.14943242,91.5761540211111,121.909333322222,104.30956575,91.3809236888889,105.971355522222,111.115865955556,106.841399766667],"type":"scatter","mode":"markers+lines","marker":{"color":"rgba(205,55,0,1)","size":15,"symbol":"circle-x-open","line":{"color":"rgba(205,55,0,1)"}},"textfont":{"color":"rgba(205,55,0,1)"},"error_y":{"color":"rgba(205,55,0,1)"},"error_x":{"color":"rgba(205,55,0,1)"},"line":{"color":"rgba(205,55,0,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<hr>
+</div>
+<div id="anova" class="section level2">
+<h2>ANOVA</h2>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Df
+</th>
+<th style="text-align:right;">
+Sum Sq
+</th>
+<th style="text-align:right;">
+Mean Sq
+</th>
+<th style="text-align:right;">
+F value
+</th>
+<th style="text-align:right;">
+Pr(&gt;F)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Operator
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+127.963
+</td>
+<td style="text-align:right;">
+63.981
+</td>
+<td style="text-align:right;">
+23.298
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Part
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+7069.268
+</td>
+<td style="text-align:right;">
+883.659
+</td>
+<td style="text-align:right;">
+321.766
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Residuals
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+192.240
+</td>
+<td style="text-align:right;">
+2.746
+</td>
+<td style="text-align:right;">
+</td>
+<td style="text-align:right;">
+</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>

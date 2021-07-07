@@ -38,6 +38,9 @@ demoItem:
       link: /post/instruction_grr
       text: 這個應用程式運用 ANOVA 分析 crossed GRR 的研究數據，輸出圖表並依據結果給輔助說明，幫助使用者了解 GRR 研究的結果。參考使用說明...
       tool: http://shiny.sightingdata.com/shiny/grr
+    - title: GRR 分析報告範例
+      link: /post/grr-report-example
+      text: 這是 GRR 分析報告的一個範例。以圖表配合解說，讓使用者更輕鬆的的解讀 GRR 測試的結果以做出更正確的判斷...
     - title: 如何解讀 GRR 分析結果
       link: /post/grr_interpret
       text: 分析 GRR不能只是看 GRR% 小於 10 或 大於 30。能正確的分析 GRR 的各種數據才能正確的評估量具的能力，尋找改善量測能力的可能方案。這篇文章以比較兩個 GRR 結果來說明如何解讀 GRR 的數據分析...
@@ -50,7 +53,7 @@ demoItem:
       link: /post/process_control_concept
       text: 製程是什麼？製程管制在管制什麼？要如何有系統的做製程管制...
     - title: 建立及應用管制圖
-      ink: /post/build_and_operate_control_chart
+      link: /post/build_and_operate_control_chart
       text: 以 x&#772-s 管制圖為例，介紹如何建立和運用管制圖的正確方法和需要了解的統計觀念...
     - title: 管制圖要有效的五個重要觀念
       link: /post/control_chart_key_concepts
