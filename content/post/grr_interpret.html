@@ -8,12 +8,13 @@ tags: ["GRR"]
 ---
 
 <script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
 
 
 <p>這裡，我們模擬兩個比較極端的 GRR 例子：Good GRR 和 Bad GRR。藉由這兩個例子的結果來說明如何解讀 GRR 的分析。</p>
-<div id="grr-" class="section level2">
+<div id="grr-基本概念" class="section level2">
 <h2>GRR 基本概念</h2>
-<div class="section level4">
+<div id="量測的變異" class="section level4">
 <h4>量測的變異</h4>
 <p>GRR 主要是研究量測系統的變異。我們把量測結果的變異來源分為二個類別：來自於被量測零件 (part) 的變異，以及來自於量測系統 (MS, measurement system) 本身的變異。總變異數等於零件的變異數加上量測系統的變異數：</p>
 <p><span class="math display">\[\sigma^{2}_{total} = \sigma^2_{parts} + \sigma^2_{MS}\]</span></p>
@@ -22,12 +23,13 @@ tags: ["GRR"]
 <p><span class="math display">\[\sigma^2_{total} = \sigma^2_{parts} + \sigma^2_{repeatability} + \sigma^2_{reproducibility}\]</span></p>
 <p>重複性指在相同情況下，量測系統量測相同零件，獲得相同結果的能力。再現性指量測系統在不同的情況下，例如不同的操作人員，量測系統維持量測一致性的能力。</p>
 </div>
-<div class="section level4">
+<div id="評估量測系統重複及再現能力" class="section level4">
 <h4>評估量測系統重複及再現能力</h4>
 <p>量測系統的變異數加上零件的變異數，總合會為 100%。藉由分析變異數的比例，可以了解在全部的量測變異中，各個分類各佔多少比重。當需要改善量測系統能力時，這會幫助我們先釐清主要變異的來源。</p>
 <p>標準差的單位會跟零件量測的單位相同，所以使用標準差來分析量具重複性及再現性 (簡稱為 R&amp;R) 的結果，會產生比較有意義的比較。<code>%GRR</code> 是 GRR 跟 total variation 在標準差的比率(以%為單位），藉於這個比率來比較重複性跟再現性的變異與整體量測的變異，以評估量測系統的重複量測及再現性的能力。</p>
 <p><br></p>
-<p>理想上，量測的結果，來自量測系統本身的變異要越低越好。<br> AIAG 提供一個判斷 GRR 能力的一般準則：</p>
+<p>理想上，量測的結果，來自量測系統本身的變異要越低越好。<br>
+AIAG 提供一個判斷 GRR 能力的一般準則：</p>
 <ul>
 <li>%GRR ≤ 10：量測系統的可接受。</li>
 <li>%GRR &gt; 10 且 ≤ 30：量測系統可能可以接受，視製程的需求、或風險及成本來決定是否需要進一步的改善。</li>
@@ -41,11 +43,11 @@ tags: ["GRR"]
 </ul>
 </div>
 </div>
-<div id="grr-" class="section level2">
+<div id="grr-分析說明" class="section level2">
 <h2>GRR 分析說明</h2>
 <div id="grr-table" class="section level4">
 <h4>GRR table</h4>
-<div class="plotx">
+<div class= 'plotx'>
 <p style="color:red; font-weight:bold;">
 Good GRR
 </p>
@@ -99,48 +101,48 @@ Total R&amp;R
 </td>
 </tr>
 <tr>
-<td style="text-align:left; padding-left: 2em;font-weight: bold;color: grey;" indentlevel="1">
+<td style="text-align:left; padding-left:  2em;font-weight: bold;color: grey !important;" indentlevel="1">
 Repeatability
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 0.379
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 0.616
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 3.695
 </td>
-<td style="text-align:right;font-weight: bold;color: grey;">
+<td style="text-align:right;font-weight: bold;color: grey !important;">
 4.1
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 0.2
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 4.3
 </td>
 </tr>
 <tr>
-<td style="text-align:left; padding-left: 2em;font-weight: bold;color: grey;" indentlevel="1">
+<td style="text-align:left; padding-left:  2em;font-weight: bold;color: grey !important;" indentlevel="1">
 Reproducibility
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 0.627
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 0.792
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 4.752
 </td>
-<td style="text-align:right;font-weight: bold;color: grey;">
+<td style="text-align:right;font-weight: bold;color: grey !important;">
 5.3
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 0.3
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 5.6
 </td>
 </tr>
@@ -193,7 +195,7 @@ Total Variation
 </tbody>
 </table>
 </div>
-<div class="plotx">
+<div class= 'plotx'>
 <p style="color:red; font-weight:bold;">
 Bad GRR
 </p>
@@ -247,94 +249,94 @@ Total R&amp;R
 </td>
 </tr>
 <tr>
-<td style="text-align:left; padding-left: 2em;font-weight: bold;color: grey;" indentlevel="1">
+<td style="text-align:left; padding-left:  2em;font-weight: bold;color: grey !important;" indentlevel="1">
 Repeatability
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 176.289
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 13.277
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 79.664
 </td>
-<td style="text-align:right;font-weight: bold;color: grey;">
+<td style="text-align:right;font-weight: bold;color: grey !important;">
 45.6
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 20.8
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 66.4
 </td>
 </tr>
 <tr>
-<td style="text-align:left; padding-left: 2em;font-weight: bold;color: grey;" indentlevel="1">
+<td style="text-align:left; padding-left:  2em;font-weight: bold;color: grey !important;" indentlevel="1">
 Reproducibility
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 378.598
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 19.458
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 116.745
 </td>
-<td style="text-align:right;font-weight: bold;color: grey;">
+<td style="text-align:right;font-weight: bold;color: grey !important;">
 66.9
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 44.7
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 97.3
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 4em;color: grey;" indentlevel="2">
+<td style="text-align:left;font-weight: bold; padding-left:  2em;color: grey !important;" indentlevel="2">
 Operator
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 254.948
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 15.967
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 95.803
 </td>
-<td style="text-align:right;font-weight: bold;color: grey;">
+<td style="text-align:right;font-weight: bold;color: grey !important;">
 54.9
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 30.1
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 79.8
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 4em;color: grey;" indentlevel="2">
+<td style="text-align:left;font-weight: bold; padding-left:  2em;color: grey !important;" indentlevel="2">
 Operator:Part
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 123.649
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 11.120
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 66.719
 </td>
-<td style="text-align:right;font-weight: bold;color: grey;">
+<td style="text-align:right;font-weight: bold;color: grey !important;">
 38.2
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 14.6
 </td>
-<td style="text-align:right;color: grey;">
+<td style="text-align:right;color: grey !important;">
 55.6
 </td>
 </tr>
@@ -419,11 +421,12 @@ Bad GRR
 <p><img src="/post/grr_interpret_files/figure-html/unnamed-chunk-3-1.png" width="720" /></p>
 </div>
 <p><br></p>
-<p>Component of variatiion 把 GRR table 中的 <code>% Study Variation</code>, <code>% Contribution</code>, 及 <code>% Tolerance</code> 的欄位做成長條圖來呈現變異分類的相對關係。</p>
+<p>Component of variatiion 把 GRR table 中的 <code>% Study Variation</code>, <code>% Contribution</code>, 及
+<code>% Tolerance</code> 的欄位做成長條圖來呈現變異分類的相對關係。</p>
 </div>
 <div id="anova-table" class="section level4">
 <h4>ANOVA table</h4>
-<div class="plotx">
+<div class= 'plotx'>
 <p style="color:red; font-weight:bold;">
 Good GRR
 </p>
@@ -511,7 +514,7 @@ Residuals
 </tbody>
 </table>
 </div>
-<div class="plotx">
+<div class= 'plotx'>
 <p style="color:red; font-weight:bold;">
 Bad GRR
 </p>
@@ -626,7 +629,7 @@ Residuals
 <li><p>在 Bad GRR 中，除了 Operator 有顯著的效應外，Operator 跟 Part 也出現交互作用的效應，表示 Operator 在量測零件時沒有一致性，例如量測某些零件時會偏大，而某些零件又會偏小。交互作用的效應應配合 Interaction of operator by part 圖來解讀。</p></li>
 </ul>
 </div>
-<div id="x-r-chart" class="section level4">
+<div id="x̄-r-chart" class="section level4">
 <h4>X̄-R chart</h4>
 <div class="plotx">
 <p style="color:red; font-weight:bold;">
@@ -641,7 +644,7 @@ Bad GRR
 <p><img src="/post/grr_interpret_files/figure-html/unnamed-chunk-7-1.png" width="720" /></p>
 </div>
 <p><br></p>
-<div id="x-chart" class="section level5">
+<div id="x̄-chart" class="section level5">
 <h5>X̄ chart</h5>
 <ul>
 <li>在正常量測系統的 GRR，X̄ chart 應該呈現大部分的點都落在管制界限外。這是因為組內 的樣本數據是同一個零件重複量測的結果，所以組內的全距應該會很小，管制限界又是由組內全距計算得來，因此會得到一組間隔很小的管制界限。</li>

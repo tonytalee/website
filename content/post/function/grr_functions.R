@@ -271,7 +271,7 @@ Grr_plot <- function(df, tolerance= NULL, colors= color_set) {
                               limits = c("perSV", "perContri"),
                               labels= c("% Study Variation", "% Contribution")) +
             labs(title = "Component of variation", x= NULL, y= "%") +
-            theme_min(xGrid_major = F, border_color = NA)
+            theme_min(xGrid_major = F)
     } else {
         tb_grr$perToler <- 100 * tb_grr$StudyVar / tolerance
         
@@ -293,7 +293,7 @@ Grr_plot <- function(df, tolerance= NULL, colors= color_set) {
                               limits = c("perSV", "perContri", "perToler"),
                               labels= c("% Study Variation", "% Contribution", "% Tolerance")) +
             labs(title = "Component of variation", x= NULL, y= "%") +
-            theme_min(xGrid_major = F, border_color = NA)
+            theme_min(xGrid_major = F)
     }
     p_comp <- p_comp +
         guides(fill= guide_legend(title = NULL))
@@ -311,7 +311,7 @@ Grr_plot <- function(df, tolerance= NULL, colors= color_set) {
         geom_line(data= df_operator_sd, aes(x= Operator, y= Mean, group= 1), color= colors[2]) +
         geom_point(data= df_operator_sd, aes(x= Operator, y= Mean), color= colors[2], shape= 13, size= 5) +
         labs(title = "Boxplot by Operators", x= "Operator", y= NULL) +
-        theme_min(xGrid_major = F, border_color = NA)
+        theme_min(xGrid_major = F)
     
     # Output by part
     part_var_test <- leveneTest(Value ~ Part, data = df)
@@ -325,7 +325,7 @@ Grr_plot <- function(df, tolerance= NULL, colors= color_set) {
         geom_line(data = df_part_sd, aes(x= Part, y= Mean, group= 1), color= colors[2]) +
         geom_point(data= df_part_sd, aes(x= Part, y= Mean), color= colors[2], shape= 13, size= 5) +
         labs(title = "Boxplot by Parts", x= "Part", y= NULL) +
-        theme_min(xGrid_major = F, border_color = NA)
+        theme_min(xGrid_major = F)
     
     # Operators * Part Interaction
     df2 <- df %>% group_by(Part, Operator) %>% summarise(Mean = mean(Value)) %>%
@@ -337,7 +337,7 @@ Grr_plot <- function(df, tolerance= NULL, colors= color_set) {
         scale_color_manual(values = colors) +
         guides(color= guide_legend(title = NULL)) +
         labs(title = "Operators-Parts Interaction", x= "Part", y= "Mean") +
-        theme_min(xGrid_major = F, border_color = NA)
+        theme_min(xGrid_major = F)
     
     # Xbar-R
     df <- mutate(df, Op_parts = paste(Operator, Part, sep= "-"))
@@ -628,7 +628,7 @@ Gplot_spc <- function(x, y, xlab= NULL, ylab= NULL, df_info= NULL, info_names= N
         scale_color_manual(values = color_set) + 
         labs(title = NULL, x= xlab, y= ylab) +
         guides(color= guide_legend(title = NULL)) +
-        theme_min(yGrid_major = F, xAngle = 90, border_color = NA, xText= F)
+        theme_min(yGrid_major = F, xAngle = 90, xText= F)
     
     list(p = p, df = df)
 }
